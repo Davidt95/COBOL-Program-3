@@ -1,3 +1,4 @@
+
 This project is designed to take six loan parameters and generate a 
  customized loan amortization schedule for the borrower. To ensure 
  persistence of the program we designed it to take any number of 
@@ -17,3 +18,5 @@ The program is also written to recognize errors in the input data and generates
 
 The output reports are formatted to be printed on a standard sheet of 55 lines with 132 characters 
  per line, with page and loan headers repeated at a new page or new loan.
+ 
+ Created using COBOL in conjunction with JCL, in a Z/OS Mainframe environment.
