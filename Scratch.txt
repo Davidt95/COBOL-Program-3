@@ -1,0 +1,89 @@
+SELECT LOAN-SUMMARY-FILE-I   ASSIGN TO LOANSI.      
+                                                    
+SELECT LOAN-EXCEPTION-REPORT     ASSIGN TO PRINT001.
+                                                    
+SELECT LOAN-SUCCESFUL-REPORT     ASSIGN TO PRINT002.
+
+
+Add new page for new loan (Not 
+
+
+
+01  INPUT-LOAN-INFO.                               
+    05 BORROWER-NAME        PIC X(40).             
+    05 LOAN-TYPE-VAL        PIC X(05).             
+    05 PRINCIPAL-AMT        PIC 9(11).             
+    05 FILLER               PIC X(01) VALUE SPACES.
+    05 TERM-IN-YEARS        PIC 9(04).             
+    05 FILLER               PIC X(01) VALUE SPACES.
+    05 ANNUAL-PCT-RT        PIC 99V99.             
+    05 FILLER               PIC X(01) VALUE SPACES.
+    05 FIRST-PAYMENT        PIC X(08).             
+    05 FILLER               PIC X(05) VALUE SPACES.
+
+BORROWER-NAME        PIC X(40).               
+LOAN-TYPE-VAL        PIC X(05).               
+PRINCIPAL-AMT        PIC 9(11).               
+FILLER               PIC X(01) VALUE SPACES.  
+TERM-IN-YEARS        PIC 9(04).               
+FILLER               PIC X(01) VALUE SPACES.  
+ANNUAL-PCT-RT        PIC 99V99.               
+FILLER               PIC X(01) VALUE SPACES.  
+FIRST-PAYMENT        PIC X(08).               
+FILLER               PIC X(05) VALUE SPACES.  
+
+FD  LOAN-EXCEPTION-REPORT                  
+    RECORD CONTAINS 132 CHARACTERS.        
+01  LOAN-EXCEPTION-RPT          PIC X(132).
+                                           
+FD  LOAN-SUCCESFUL-REPORT                  
+    RECORD CONTAINS 132 CHARACTERS.        
+01  LOAN-SUCCESFUL-RPT          PIC X(132).
+
+WS-CMPT-LOAN-TYPE -loan type name (x)
+WS-CMPT-PRINCIPAL-AMT
+WS-CMPT-ANNUAL-PCT-RT
+ 
+ WS-SUCCESFUL-RPT-DETAIL-L1.                                  
+ 05                      PIC (20) VALUE 'PAYMENT DATE:'.      
+ 05 WS-SUC-DTL-PAYDAY    PIC XX/XX/XXXX.                      
+ 05                      PIC (20) VALUE 'BEGINNING BALANCE: '.
+ 05 WS-SUC-DTL-BEGBAL    PIC ZZZ,ZZZ,ZZ9.99.                  
+ 05                      PIC (20) VALUE 'MONTHLY PAYMENT: '.  
+ 05 WS-SUC-DTL-MONTHL    PIC ZZZ,ZZ9.99.                      
+ 05                      PIC (20) VALUE 'PRINCIPAL PAID: '.   
+ 05 WS-SUC-DTL-PRNAMT    PIC ZZZ,ZZ9.99.                      
+ 05                      PIC (20) VALUE 'INTEREST PAID: '.    
+ 05 WS-SUC-DTL-INTAMT    PIC ZZZ,ZZ9.99.                      
+ 05                      PIC (20) VALUE 'ENDING BALANCE: '.   
+ 05 WS-SUC-DTL-BEGBAL    PIC ZZZ,ZZZ,ZZ9.99.                  
+              
+
+
+WS-GRAND-TOTALS.                      
+05 WS-TOTAL-PAYMENTS     PIC 9(10)V99.
+05 WS-TOTAL-INTEREST     PIC 9(10)V99.
+05 WS-TOTAL-PRINCIPL     PIC 9(10)V99. 29
+                                       
+ WS-PAYMENTS-GT
+               
+ WS-INTEREST-GT
+               
+ WS-PRINCIPL-GT       
+
+
+********************************* Top of Data *Principal term apr  payment date *****************************
+JUAN JOHNSON                            100N 00003955555 0005 0370 05012012 
+ISSAC HAYES                             100U 00002450000 0004 0550 06012012 
+CURTIS MAYFIELD                         500  00025000000 0020 0390 06012012 
+MR. MONEY                               500  00125000000 0030 0425 01012013 
+KID ROCK                                200  00007500000 0010 0395 06012012 
+EASTER BUNNY                            800  00006500000 0012 0455 09012012
+DENNIS RODMAN                           900  00000000000 0000 0000 00000000 
+MR. PROBLEM #1                          100N 00000000000      0000 00000000 
+MR. PROBLEM #2                          100N 00000000000 0012 3.95 00000000 
+JOE JONES III                           300  00007500000 0001 0750 05012012 
+
+
+                       BOBCAT BANK                                              
+        LOAN AMORTIZATION SCHEDULE REQUEST EXCEPTIONS     27

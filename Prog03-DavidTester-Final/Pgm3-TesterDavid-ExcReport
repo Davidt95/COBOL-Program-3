@@ -1,0 +1,16 @@
+12017/11/07 11:34:34                                            BOBCAT BANK                                               PAGE #001
+ PROGRAM #3: DAVID TESTER                        LOAN AMORTIZATION SCHEDULE REQUEST EXCEPTIONS
+
+0     CANNOT PROCESS LOAN FOR  DENNIS RODMAN
+                                             WARNING CONDITION: ERROR IN LOAN TYPE
+                                             FATAL CONDITION: INVALID PRINCIPAL VALUE
+                                             FATAL CONDITION: INVALID TERM YEAR VALUE
+                                             FATAL CONDITION: INVALID APR VALUE
+0     CANNOT PROCESS LOAN FOR  MR. PROBLEM #1
+                                             FATAL CONDITION: INVALID PRINCIPAL VALUE
+                                             FATAL CONDITION: INVALID TERM YEAR VALUE
+                                             FATAL CONDITION: INVALID APR VALUE
+0     CANNOT PROCESS LOAN FOR  MR. PROBLEM #2
+                                             FATAL CONDITION: INVALID PRINCIPAL VALUE
+                                             FATAL CONDITION: INVALID APR VALUE
+

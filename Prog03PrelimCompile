@@ -1,0 +1,1897 @@
+1                    J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  Z O S K C T R
+0
+ 13.09.17 JOB05882 ---- TUESDAY,   31 OCT 2017 ----
+ 13.09.17 JOB05882  IRR010I  USERID KC03G8D  IS ASSIGNED TO THIS JOB.
+ 13.09.17 JOB05882  IEF677I WARNING MESSAGE(S) FOR JOB KC03G8DQ ISSUED
+ 13.09.17 JOB05882  ICH70001I KC03G8D  LAST ACCESS AT 13:04:19 ON TUESDAY, OCTOBER 31, 2017
+ 13.09.17 JOB05882  $HASP373 KC03G8DQ STARTED - INIT 1    - CLASS A        - SYS S0W1
+ 13.09.19 JOB05882  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---
+ 13.09.19 JOB05882  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    TCB    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS
+ 13.09.19 JOB05882  -KC03G8DQ                      04  11048 ******    .00     .0   5972   0      0      0      0     0
+ 13.09.19 JOB05882  -KC03G8DQ                      00    309 ******    .00     .0    807   0      0      0      0     0
+ 13.09.19 JOB05882  -KC03G8DQ ENDED.  NAME-COBOL                TOTAL TCB CPU TIME=   .00  TOTAL ELAPSED TIME=    .0
+ 13.09.19 JOB05882  $HASP395 KC03G8DQ ENDED
+0------ JES2 JOB STATISTICS ------
+-  31 OCT 2017 JOB EXECUTION DATE
+-            5 CARDS READ
+-        1,896 SYSOUT PRINT RECORDS
+-            0 SYSOUT PUNCH RECORDS
+-          139 SYSOUT SPOOL KBYTES
+-         0.02 MINUTES EXECUTION TIME
+         1 //KC03G8DQ JOB 1,COBOL,NOTIFY=&SYSUID                                   JOB05882
+           //* COMPILE COBOL PROGRAM
+           IEFC653I SUBSTITUTION JCL - 1,COBOL,NOTIFY=KC03G8D
+         2 //STEP1 EXEC IGYWCL
+         3 XXIGYWCL PROC  LNGPRFX='IGY510',                                        00010000
+           XX             LIBPRFX='CEE',                                           00020000
+           XX             PGMLIB='&&GOSET',GOPGM=GO                                00030000
+           XX*                                                                     00040000
+           XX********************************************************************* 00050000
+           XX*                                                                   * 00060000
+           XX*  Enterprise COBOL for z/OS                                        * 00070000
+           XX*               Version 5 Release 1 Modification 0                  * 00080000
+           XX*                                                                   * 00090000
+           XX*  LICENSED MATERIALS - PROPERTY OF IBM.                            * 00100000
+           XX*                                                                   * 00110000
+           XX*  5655-W32 © COPYRIGHT IBM CORP. 1983, 2011                        * 00120000
+           XX*  ALL RIGHTS RESERVED                                              * 00130000
+           XX*                                                                   * 00140000
+           XX*  US GOVERNMENT USERS RESTRICTED RIGHTS - USE,                     * 00150000
+           XX*  DUPLICATION OR DISCLOSURE RESTRICTED BY GSA                      * 00160000
+           XX*  ADP SCHEDULE CONTRACT WITH IBM CORP.                             * 00170000
+           XX*                                                                   * 00180000
+           XX********************************************************************* 00190000
+           XX*                                                                     00200000
+           XX*  COMPILE AND LINK EDIT A COBOL PROGRAM                              00210000
+           XX*                                                                     00220000
+           XX*  PARAMETER  DEFAULT VALUE    USAGE                                  00230000
+           XX*   LNGPRFX   IGY.V5R1M0       PREFIX FOR LANGUAGE DATA SET NAMES     00240000
+           XX*   LIBPRFX   CEE              PREFIX FOR LIBRARY DATA SET NAMES      00260000
+           XX*   PGMLIB    &&GOSET          DATA SET NAME FOR LOAD MODULE          00270000
+           XX*   GOPGM     GO               MEMBER NAME FOR LOAD MODULE            00280000
+           XX*                                                                     00290000
+           XX*  CALLER MUST SUPPLY //COBOL.SYSIN DD ...                            00300000
+           XX*                                                                     00310000
+           XX*  CALLER MUST ALSO SUPPLY //COBOL.SYSLIB DD ... for COPY statements  00320000
+           XX*                                                                     00330000
+         4 XXCOBOL  EXEC PGM=IGYCRCTL,REGION=0M                                    00340000
+         5 XXSTEPLIB  DD  DSNAME=&LNGPRFX..SIGYCOMP,DISP=SHR                       00350000
+           IEFC653I SUBSTITUTION JCL - DSNAME=IGY510.SIGYCOMP,DISP=SHR
+         6 XX         DD  DSNAME=&LIBPRFX..SCEERUN,DISP=SHR                        00360000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEERUN,DISP=SHR
+         7 XX         DD  DSNAME=&LIBPRFX..SCEERUN2,DISP=SHR                       00370000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEERUN2,DISP=SHR
+         8 XXSYSPRINT DD  SYSOUT=*                                                 00380000
+         9 XXSYSLIN   DD  DSNAME=&&LOADSET,UNIT=SYSALLDA,                          00390000
+           XX             DISP=(MOD,PASS),SPACE=(CYL,(1,1))                        00400000
+        10 XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00420000
+        11 XXSYSUT2   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00430000
+        12 XXSYSUT3   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00440000
+        13 XXSYSUT4   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00450000
+        14 XXSYSUT5   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00460000
+        15 XXSYSUT6   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00470000
+        16 XXSYSUT7   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00480000
+        17 XXSYSUT8   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00490000
+        18 XXSYSUT9   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00500000
+        19 XXSYSUT10  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00510000
+        20 XXSYSUT11  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00520000
+        21 XXSYSUT12  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00530000
+        22 XXSYSUT13  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00540000
+        23 XXSYSUT14  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00550000
+        24 XXSYSUT15  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00560000
+        25 XXSYSMDECK DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00565000
+        26 //SYSIN        DD DSN=&SYSUID..LANG.SOURCE(PROG03),DISP=SHR
+           IEFC653I SUBSTITUTION JCL - DSN=KC03G8D.LANG.SOURCE(PROG03),DISP=SHR
+        27 XXLKED   EXEC PGM=IEWBLINK,COND=(8,LT,COBOL),REGION=0M                  00570000
+        28 XXSYSLIB   DD  DSNAME=&LIBPRFX..SCEELKED,DISP=SHR                       00580000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEELKED,DISP=SHR
+        29 XX         DD  DSNAME=&LIBPRFX..SCEELKEX,DISP=SHR                       00590000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEELKEX,DISP=SHR
+        30 XXSYSPRINT DD  SYSOUT=*                                                 00600000
+        31 XXSYSLIN   DD  DSNAME=&&LOADSET,DISP=(OLD,DELETE)                       00610000
+        32 XX         DD  DDNAME=SYSIN                                             00620000
+        33 //LKED.SYSLMOD DD DSN=&SYSUID..LANG.LOAD(PROG03),DISP=SHR
+           IEFC653I SUBSTITUTION JCL - DSN=KC03G8D.LANG.LOAD(PROG03),DISP=SHR
+           X/SYSLMOD  DD  DSNAME=&PGMLIB(&GOPGM),                                  00630000
+           X/             SPACE=(CYL,(1,1,1)),                                     00640000
+           X/             UNIT=SYSALLDA,DISP=(MOD,PASS),DSNTYPE=LIBRARY            00650000
+           IEFC653I SUBSTITUTION JCL - DSNAME=&&GOSET(GO),SPACE=(CYL,(1,1,1)),UNIT=SYSALLDA,DISP=(MOD,PASS),
+           DSNTYPE=LIBRARY
+        34 XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00660000
+  STMT NO. MESSAGE
+         2 IEFC001I PROCEDURE IGYWCL WAS EXPANDED USING SYSTEM LIBRARY USER.PROCLIB
+        34 IEF686I DDNAME REFERRED TO ON DDNAME KEYWORD IN PRIOR STEP WAS NOT RESOLVED
+ ICH70001I KC03G8D  LAST ACCESS AT 13:04:19 ON TUESDAY, OCTOBER 31, 2017
+ IEF236I ALLOC. FOR KC03G8DQ COBOL STEP1
+ IEF237I A006 ALLOCATED TO STEPLIB
+ IEF237I A002 ALLOCATED TO
+ IEF237I A002 ALLOCATED TO
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IGD101I SMS ALLOCATED TO DDNAME (SYSLIN  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.LOADSET.H01 )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT1  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148916    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT2  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148917    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT3  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148918    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT4  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148919    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT5  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148920    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT6  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148921    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT7  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148922    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT8  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148923    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT9  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148924    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT10 )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148925    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT11 )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148926    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT12 )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148927    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT13 )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148928    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT14 )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148929    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT15 )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148930    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD101I SMS ALLOCATED TO DDNAME (SYSMDECK)
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148931    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IGD103I SMS ALLOCATED TO DDNAME SYSIN
+ IEF142I KC03G8DQ COBOL STEP1 - STEP WAS EXECUTED - COND CODE 0004
+ IEF285I   IGY510.SIGYCOMP                              KEPT
+ IEF285I   VOL SER NOS= Z1PRD2.
+ IEF285I   CEE.SCEERUN                                  KEPT
+ IEF285I   VOL SER NOS= Z1RES2.
+ IEF285I   CEE.SCEERUN2                                 KEPT
+ IEF285I   VOL SER NOS= Z1RES2.
+ IEF285I   KC03G8D.KC03G8DQ.JOB05882.D0000101.?         SYSOUT
+ IGD106I SYS17304.T130917.RA000.KC03G8DQ.LOADSET.H01  PASSED,    DDNAME=SYSLIN
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148916     DELETED,   DDNAME=SYSUT1
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148917     DELETED,   DDNAME=SYSUT2
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148918     DELETED,   DDNAME=SYSUT3
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148919     DELETED,   DDNAME=SYSUT4
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148920     DELETED,   DDNAME=SYSUT5
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148921     DELETED,   DDNAME=SYSUT6
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148922     DELETED,   DDNAME=SYSUT7
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148923     DELETED,   DDNAME=SYSUT8
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148924     DELETED,   DDNAME=SYSUT9
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148925     DELETED,   DDNAME=SYSUT10
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148926     DELETED,   DDNAME=SYSUT11
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148927     DELETED,   DDNAME=SYSUT12
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148928     DELETED,   DDNAME=SYSUT13
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148929     DELETED,   DDNAME=SYSUT14
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148930     DELETED,   DDNAME=SYSUT15
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148931     DELETED,   DDNAME=SYSMDECK
+ IGD104I KC03G8D.LANG.SOURCE                          RETAINED,  DDNAME=SYSIN
+ IEF373I STEP/COBOL   /START 2017304.1309
+ IEF032I STEP/COBOL   /STOP  2017304.1309
+         CPU:     0 HR  00 MIN  00.17 SEC    SRB:     0 HR  00 MIN  00.01 SEC
+         VIRT:   416K  SYS:   368K  EXT:   118160K  SYS:    13976K
+         ATB- REAL:                    36K  SLOTS:                     0K
+              VIRT- ALLOC:       6M SHRD:       0M
+ IEF236I ALLOC. FOR KC03G8DQ LKED STEP1
+ IEF237I A001 ALLOCATED TO SYSLIB
+ IEF237I A001 ALLOCATED TO
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IGD103I SMS ALLOCATED TO DDNAME SYSLIN
+ IEF237I DMY  ALLOCATED TO
+ IGD103I SMS ALLOCATED TO DDNAME SYSLMOD
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT1  )
+         DSN (SYS17304.T130917.RA000.KC03G8DQ.R0148932    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00
+ IEF142I KC03G8DQ LKED STEP1 - STEP WAS EXECUTED - COND CODE 0000
+ IEF285I   CEE.SCEELKED                                 KEPT
+ IEF285I   VOL SER NOS= Z1RES1.
+ IEF285I   CEE.SCEELKEX                                 KEPT
+ IEF285I   VOL SER NOS= Z1RES1.
+ IEF285I   KC03G8D.KC03G8DQ.JOB05882.D0000102.?         SYSOUT
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.LOADSET.H01  DELETED,   DDNAME=SYSLIN
+ IGD104I KC03G8D.LANG.LOAD                            RETAINED,  DDNAME=SYSLMOD
+ IGD105I SYS17304.T130917.RA000.KC03G8DQ.R0148932     DELETED,   DDNAME=SYSUT1
+ IEF373I STEP/LKED    /START 2017304.1309
+ IEF032I STEP/LKED    /STOP  2017304.1309
+         CPU:     0 HR  00 MIN  00.03 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+         VIRT:    92K  SYS:   284K  EXT:     1640K  SYS:    11716K
+         ATB- REAL:                     0K  SLOTS:                     0K
+              VIRT- ALLOC:       0M SHRD:       0M
+ IEF375I  JOB/KC03G8DQ/START 2017304.1309
+ IEF033I  JOB/KC03G8DQ/STOP  2017304.1309
+         CPU:     0 HR  00 MIN  00.20 SEC    SRB:     0 HR  00 MIN  00.01 SEC
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0                         Date 10/31/2017  Time 13:09:18   Page     1
+0PROCESS(CBL) statements:
+  CBL LIB,MAP,OFFSET
+
+         IGYOS4090-I   The "LIB" option specification is no longer required.  COBOL library processing is always in effect.
+
+0Options in effect:
+  NOADATA
+    ADV
+    AFP(VOLATILE)
+    QUOTE
+    ARCH(6)
+    ARITH(COMPAT)
+  NOAWO
+  NOBLOCK0
+    BUFSIZE(4096)
+  NOCICS
+    CODEPAGE(1140)
+  NOCOMPILE(S)
+  NOCURRENCY
+    DATA(31)
+    DBCS
+  NODECK
+  NODIAGTRUNC
+    DISPSIGN(COMPAT)
+  NODLL
+  NODUMP
+  NODYNAM
+  NOEXIT
+  NOEXPORTALL
+  NOFASTSRT
+    FLAG(I,I)
+  NOFLAGSTD
+    HGPR(PRESERVE)
+    INTDATE(ANSI)
+    LANGUAGE(EN)
+    LINECOUNT(60)
+  NOLIST
+    MAP
+    MAXPCF(60000)
+  NOMDECK
+  NONAME
+    NSYMBOL(NATIONAL)
+  NONUMBER
+    NUMPROC(NOPFD)
+    OBJECT
+    OFFSET
+    OPTIMIZE(0)
+    OUTDD(SYSOUT)
+    PGMNAME(COMPAT)
+    RENT
+    RMODE(AUTO)
+    SEQUENCE
+    SIZE(5000000)
+    SOURCE
+    SPACE(1)
+  NOSQL
+    SQLCCSID
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0                         Date 10/31/2017  Time 13:09:18   Page     2
+0 NOSQLIMS
+  NOSSRANGE
+  NOSTGOPT
+  NOTERM
+  NOTEST(NODWARF)
+  NOTHREAD
+    TRUNC(STD)
+  NOVBREF
+  NOWORD
+    XREF(FULL)
+    ZWB
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     3
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000001                IDENTIFICATION DIVISION.
+   000002                PROGRAM-ID.  PROG03.
+   000003               ****************************************************************
+   000004               **   CIS3375 PROG03 COBOL SOURCE PROGRAM                      **
+   000005               **                                                            **
+   000006               **  AUTHOR:  DAVID TESTER                                     **
+   000007               **   INPUT:  1. CONTROL CARD                                  **
+   000008               **           2. CUSTOMER MASTER FILE                          **
+   000009               **  OUTPUT:  1. SALES REPORT                                  **
+   000010               **                                                            **
+   000011               ****************************************************************
+   000012               **  MODIFICATION LOG:                                         **
+   000013               **  00.  10/24/2017  ORIGINAL VERSION                         **
+   000014               **                                                            **
+   000015               ****************************************************************
+   000016                ENVIRONMENT DIVISION.
+   000017                INPUT-OUTPUT SECTION.
+   000018                FILE-CONTROL.
+   000019               **                INPUT LOAN DATA                             **
+   000020                     SELECT LOAN-SUMMARY-FILE-I   ASSIGN TO LOANSI.                       30
+   000021               **                                                            **
+   000022                     SELECT LOAN-EXCEPTION-REPORT     ASSIGN TO PRINT001.                 46
+   000023               **                                                            **
+   000024                     SELECT LOAN-SUCCESFUL-REPORT     ASSIGN TO PRINT002.                 50
+   000025
+   000026                DATA DIVISION.
+   000027                FILE SECTION.
+   000028
+   000029
+   000030                FD  LOAN-SUMMARY-FILE-I
+
+ ==000030==> IGYGR1216-I A "RECORDING MODE" of "F" was assumed for file "LOAN-SUMMARY-FILE-I".
+
+   000031                    RECORD CONTAINS 80 CHARACTERS.
+   000032                01  INPUT-LOAN-INFO.                                                      BLF=00001           0CL80
+   000033                    05 BORROWER-NAME        PIC X(40).                                    BLF=00001,000000000 40C
+   000034                    05 LOAN-TYPE-VAL        PIC X(05).                                    BLF=00001,000000040 5C
+   000035                    05 PRINCIPAL-AMT        PIC 9(11).                                    BLF=00001,000000045 11C
+   000036                    05 FILLER               PIC X(01) VALUE SPACES.                       BLF=00001,000000056 1C
+                                                                                                   IMP
+
+ ==000036==> IGYDS1158-I A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE
+                         SECTION".  The "VALUE" clause was treated as comments.
+
+   000037                    05 TERM-IN-YEARS        PIC 9(04).                                    BLF=00001,000000057 4C
+   000038                    05 FILLER               PIC X(01) VALUE SPACES.                       BLF=00001,000000061 1C
+                                                                                                   IMP
+
+ ==000038==> IGYDS1158-I A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE
+                         SECTION".  The "VALUE" clause was treated as comments.
+
+   000039                    05 ANNUAL-PCT-RT        PIC 9V999.                                    BLF=00001,000000062 4C
+   000040                    05 FILLER               PIC X(01) VALUE SPACES.                       BLF=00001,000000066 1C
+                                                                                                   IMP
+
+ ==000040==> IGYDS1158-I A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE
+                         SECTION".  The "VALUE" clause was treated as comments.
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     4
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0
+   000041                    05 FIRST-PAYMENT        PIC X(08).                                    BLF=00001,000000067 8C
+   000042                    05 FILLER               PIC X(05) VALUE SPACES.                       BLF=00001,000000075 5C
+                                                                                                   IMP
+
+ ==000042==> IGYDS1158-I A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE
+                         SECTION".  The "VALUE" clause was treated as comments.
+
+   000043
+   000044
+   000045
+   000046                FD  LOAN-EXCEPTION-REPORT
+
+ ==000046==> IGYGR1216-I A "RECORDING MODE" of "F" was assumed for file "LOAN-EXCEPTION-REPORT".
+
+   000047                    RECORD CONTAINS 132 CHARACTERS.
+   000048                01  LOAN-EXCEPTION-RPT          PIC X(132).                               BLF=00002           132C
+   000049
+   000050                FD  LOAN-SUCCESFUL-REPORT
+
+ ==000050==> IGYGR1216-I A "RECORDING MODE" of "F" was assumed for file "LOAN-SUCCESFUL-REPORT".
+
+   000051                    RECORD CONTAINS 132 CHARACTERS.
+   000052                01  LOAN-SUCCESFUL-RPT          PIC X(132).                               BLF=00003           132C
+   000053
+   000054                WORKING-STORAGE SECTION.
+   000055
+   000056                01  PROGRAM-INDICATORS.                                                                       0CL1
+   000057                    05 ARE-THERE-MORE-RECORDS   PIC X   VALUE 'Y'.                                  000000000 1C
+   000058                        88 THERE-ARE-MORE-RECORDS        VALUE 'Y'.
+   000059                        88 THERE-ARE-NO-MORE-RECORDS     VALUE 'N'.
+   000060
+   000061                01  WS-CURRENT-DATE-TIME.                                                                     0CL14
+   000062                    05  WS-CURRENT-DATE.                                                            000000000 0CL8
+   000063                        10  WS-CURRENT-DATE-CCYY    PIC 9(04)  VALUE 0.                             000000000 4C
+   000064                        10  WS-CURRENT-DATE-MM      PIC 9(02)  VALUE 0.                             000000004 2C
+   000065                        10  WS-CURRENT-DATE-DD      PIC 9(02)  VALUE 0.                             000000006 2C
+   000066                    05  WS-CURRENT-TIME.                                                            000000008 0CL6
+   000067                        10  WS-CURRENT-TIME-HH      PIC 9(02)  VALUE 0.                             000000008 2C
+   000068                        10  WS-CURRENT-TIME-MM      PIC 9(02)  VALUE 0.                             000000010 2C
+   000069                        10  WS-CURRENT-TIME-SS      PIC 9(02)  VALUE 0.                             000000012 2C
+   000070
+   000071                01  WS-SPACER.                                                                                0CL132
+   000072                    05  WS-FILL        PIC X(132) VALUE SPACES.                                     000000000 132C
+                                                                                                   IMP
+   000073
+   000074                01  WS-EXCEPTION-VARS.                                                                        0CL6
+   000075                    05 WS-EXCEPTION-LOAN-TYPE    PIC X(01) VALUE 'N'.                               000000000 1C
+   000076                    05 WS-EXCEPTION-PRINCIPAL    PIC X(01) VALUE 'N'.                               000000001 1C
+   000077                    05 WS-EXCEPTION-TERM-YEAR    PIC X(01) VALUE 'N'.                               000000002 1C
+   000078                    05 WS-EXCEPTION-ANNUAL-PR    PIC X(01) VALUE 'N'.                               000000003 1C
+   000079                    05 WS-EXCEPTION-CHECK        PIC X(01) VALUE 'N'.                               000000004 1C
+   000080                    05 WS-DECIMAL-COUNT          PIC 9(01) VALUE 0.                                 000000005 1C
+   000081
+   000082                01  WS-CMPT-VAL.                                                                              0CL137
+   000083                    05 WS-CMPT-LOAN-TYPE         PIC X(04).                                         000000000 4C
+   000084                    05 WS-CMPT-LOAN-NAME         PIC X(18).                                         000000004 18C
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     5
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000085                    05 WS-CMPT-ANNUAL-PCT-RT     PIC 99V9999.                                       000000022 6C
+   000086                    05 WS-CMPT-ANNUAL-RT         PIC 99V9999.                                       000000028 6C
+   000087                    05 WS-CMPT-PRINCIPAL         PIC 9(09)V99.                                      000000034 11C
+   000088                    05 WS-CMPT-TERM-IN-YEARS     PIC 99.                                            000000045 2C
+   000089                    05 WS-CMPT-TERM-YEAR         PIC 999.                                           000000047 3C
+   000090                    05 WS-CMPT-PYMT-DATE         PIC 9(08).                                         000000050 8C
+   000091                    05 WS-CMPT-A                 PIC 9(09)V99.                                      000000058 11C
+   000092                    05 WS-CMPT-B                 PIC 9(09)V99.                                      000000069 11C
+   000093                    05 WS-CMPT-I                 PIC V9999.                                         000000080 4C
+   000094                    05 WS-CMPT-N                 PIC 999.                                           000000084 3C
+   000095
+   000096                    05 WS-CMPT-MNTHLY-PMT        PIC 9(09)V999.                                     000000087 12C
+   000097                    05 WS-CMPT-INTEREST-DUE      PIC 9(07)V999.                                     000000099 10C
+   000098                    05 WS-CMPT-PRINCIPAL-AMT     PIC 9(07)V999.                                     000000109 10C
+   000099                    05 WS-CMPT-PRINCIPAL-END     PIC 9(09)V999.                                     000000119 12C
+   000100                    05 WS-TERM-MNTHS-LEFT        PIC 999.                                           000000131 3C
+   000101                    05 WS-NUMB-OF-MONTHS         PIC 999.                                           000000134 3C
+   000102
+   000103                01  WS-PGM-VARS.                                                                              0CL13
+   000104                    05  WS-LINE-CTR          PIC 9(02)  VALUE  0.                                   000000000 2C
+   000105                    05  WS-RECD-CTR          PIC 9(02)  VALUE  0.                                   000000002 2C
+   000106                    05  WS-RGN-CTR           PIC 9(02)  VALUE  0.                                   000000004 2C
+   000107                    05  WS-RES-CTR           PIC 9(02)  VALUE  0.                                   000000006 2C
+   000108                    05  WS-PAGE-CTR          PIC 9(05)  VALUE  0.                                   000000008 5C
+   000109
+   000110
+   000111                01  WS-HEADING-LINE-1.                                                                        0CL81
+   000112                    05  WS-HEADING-DATE.                                                            000000000 0CL8
+   000113                        10  WS-HEADING-DATE-CCYY    PIC 9(04)  VALUE 0.                             000000000 4C
+   000114                        10  WS-HEADING-DATE-MM      PIC 9(02)  VALUE 0.                             000000004 2C
+   000115                        10  WS-HEADING-DATE-DD      PIC 9(02)  VALUE 0.                             000000006 2C
+   000116                    05  WS-HEADING-TIME.                                                            000000008 0CL6
+   000117                        10  WS-HEADING-TIME-HH      PIC 9(02)  VALUE 0.                             000000008 2C
+   000118                        10  WS-HEADING-TIME-MM      PIC 9(02)  VALUE 0.                             000000010 2C
+   000119                        10  WS-HEADING-TIME-SS      PIC 9(02)  VALUE 0.                             000000012 2C
+   000120                    05  FILLER                      PIC X(40)  VALUE '  '.                          000000014 40C
+   000121                    05  WS-TITLE-L1                 PIC X(18)                                       000000054 18C
+   000122                           VALUE 'BOBCAT BANK'.
+   000123                    05  FILLER                      PIC X(06)  VALUE 'PAGE #'.                      000000072 6C
+   000124                    05  WS-PAGE-NUM                 PIC X(03)  VALUE ZERO.                          000000078 3C
+                                                                                                   IMP
+   000125
+   000126
+   000127                01  WS-HEADING-LINE-2.                                                                        0CL110
+   000128                    05                    PIC X(25)                                                 000000000 25C
+   000129                                VALUE 'PROGRAM #3: DAVID TESTER'.
+   000130                    05                    PIC X(40)  VALUE SPACES.                                  000000025 40C
+                                                                                                   IMP
+   000131                    05                    PIC X(45)                                                 000000065 45C
+   000132                        VALUE 'LOAN AMORTIZATION SCHEDULE'.
+   000133
+   000134
+   000135                01  WS-HEADING-LINE-3.                                                                        0CL132
+   000136                    05                    PIC X(132) VALUE ' '.                                     000000000 132C
+   000137
+   000138               *01  WS-RPT-TITLE-LINE-01.
+   000139
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     6
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000140               *01  WS-RPT-TITLE-LINE-02.
+   000141
+   000142               *01  WS-RPT-TITLE-LINE-03.
+   000143
+   000144               *01  WS-SUMMARY-LINE.
+   000145
+   000146               *01  WS-EXCEPTION-DETAIL-LINE-1.
+   000147
+   000148
+   000149                01  WS-EXCEPTION-DTL-SUMMARY.                                                                 0CL86
+   000150                    05                         PIC X(05) VALUE SPACES.                              000000000 5C
+                                                                                                   IMP
+   000151                    05 FILLER  PIC X(25) VALUE 'CANNOT PROCESS LOAN FOR'.                           000000005 25C
+   000152                    05 WS-EXC-DTL-NAME         PIC X(25).                                           000000030 25C
+   000153                    05 FILLER  PIC X(20) VALUE ' TO THE AMOUNT OF $ '.                              000000055 20C
+   000154                    05 WS-EXC-DTL-PRINC-AMT    PIC 9(09)V99.                                        000000075 11C
+   000155
+   000156                01  WS-EXCEPTION-DTL-LOAN.                                                                    0CL60
+   000157                    05                         PIC X(15) VALUE SPACES.                              000000000 15C
+                                                                                                   IMP
+   000158                    05 FILLER                  PIC X(45)                                            000000015 45C
+   000159                               VALUE 'WARNING CONDITION: ERROR IN LOAN TYPE'.
+   000160                01  WS-EXCEPTION-DTL-PRIN.                                                                    0CL60
+   000161                    05                         PIC X(15) VALUE SPACES.                              000000000 15C
+                                                                                                   IMP
+   000162                    05 FILLER                  PIC X(45)                                            000000015 45C
+   000163                               VALUE 'FATAL CONDITION: INVALID PRINCIPAL VALUE'.
+   000164                01  WS-EXCEPTION-DTL-YEAR.                                                                    0CL60
+   000165                    05                         PIC X(15) VALUE SPACES.                              000000000 15C
+                                                                                                   IMP
+   000166                    05                         PIC X(45)                                            000000015 45C
+   000167                               VALUE 'FATAL CONDITION: INVALID TERM YEAR VALUE'.
+   000168                01  WS-EXCEPTION-DTL-RATE.                                                                    0CL60
+   000169                    05                         PIC X(15) VALUE SPACES.                              000000000 15C
+                                                                                                   IMP
+   000170                    05                         PIC X(45)                                            000000015 45C
+   000171                               VALUE 'FATAL CONDITION: INVALID APR VALUE'.
+   000172               *
+   000173                01  WS-SUCCESFUL-RPT-SUMMARY-L1.                                                              0CL132
+   000174                    05                         PIC X(02) VALUE SPACES.                              000000000 2C
+                                                                                                   IMP
+   000175                    05                         PIC X(20)                                            000000002 20C
+   000176                                         VALUE 'AMORT SCHEDULE FOR: '.
+   000177                    05 WS-SUC-SUM-NAME         PIC X(18).                                           000000022 18C
+   000178                    05                         PIC X(11)                                            000000040 11C
+   000179                                         VALUE 'LOAN TYPE: '.
+   000180                    05 WS-SUC-SUM-TYPE         PIC X(18).                                           000000051 18C
+   000181                    05                         PIC X(16)                                            000000069 16C
+   000182                                         VALUE 'PRINCIPAL AMT: $'.
+   000183                    05 WS-SUC-SUM-PRIN         PIC ZZZ,ZZZ,ZZ9.99.                                  000000085 14C
+   000184                    05                         PIC X(17)                                            000000099 17C
+   000185                                         VALUE '  TERM IN YEARS: '.
+   000186                    05 WS-SUC-SUM-TERM         PIC 99.                                              000000116 2C
+   000187                    05                         PIC X(07)                                            000000118 7C
+   000188                                         VALUE ' APR: '.
+   000189                    05 WS-SUC-SUM-APR          PIC 99.99.                                           000000125 5C
+   000190                    05                         PIC X(02)                                            000000130 2C
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     7
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000191                                         VALUE '%'.
+   000192
+   000193                01  WS-SUCCESFUL-RPT-DETAIL-L1.                                                               0CL122
+   000194                    05                     PIC X(14) VALUE ' PAYMENT DATE:'.                        000000000 14C
+   000195                    05                     PIC X(05) VALUE ' '.                                     000000014 5C
+   000196                    05                     PIC X(20) VALUE 'BEGINNING BALANCE: '.                   000000019 20C
+   000197                    05                     PIC X(01) VALUE ' '.                                     000000039 1C
+   000198                    05                     PIC X(20) VALUE ' MONTHLY PAYMENT: '.                    000000040 20C
+   000199                    05                     PIC X(01) VALUE ' '.                                     000000060 1C
+   000200                    05                     PIC X(18) VALUE ' PRINCIPAL PAID: '.                     000000061 18C
+   000201                    05                     PIC X(01) VALUE ' '.                                     000000079 1C
+   000202                    05                     PIC X(20) VALUE ' INTEREST PAID: '.                      000000080 20C
+   000203                    05                     PIC X(02) VALUE ' '.                                     000000100 2C
+   000204                    05                     PIC X(20) VALUE ' ENDING BALANCE: '.                     000000102 20C
+   000205
+   000206                01  WS-SUCCESFUL-RPT-DETAIL-L2.                                                               0CL117
+   000207                    05                     PIC X(02) VALUE ' '.                                     000000000 2C
+   000208                    05 WS-SUC-DTL-PAYDAY   PIC XX/XX/XXXX.                                          000000002 10C
+   000209               *    05 WS-SUC-DTL-JUNK     PIC 9999.
+   000210                    05                     PIC X(07) VALUE ' '.                                     000000012 7C
+   000211                    05 WS-SUC-DTL-BEGBAL   PIC ZZZ,ZZZ,ZZ9.99.                                      000000019 14C
+   000212                    05                     PIC X(10) VALUE ' '.                                     000000033 10C
+   000213                    05 WS-SUC-DTL-MONTHL   PIC ZZZ,ZZ9.99.                                          000000043 10C
+   000214                    05                     PIC X(10) VALUE ' '.                                     000000053 10C
+   000215                    05 WS-SUC-DTL-PRNAMT   PIC ZZZ,ZZ9.99.                                          000000063 10C
+   000216                    05                     PIC X(10) VALUE ' '.                                     000000073 10C
+   000217                    05 WS-SUC-DTL-INTAMT   PIC ZZZ,ZZ9.99.                                          000000083 10C
+   000218                    05                     PIC X(10) VALUE ' '.                                     000000093 10C
+   000219                    05 WS-SUC-DTL-ENDBAL   PIC ZZZ,ZZZ,ZZ9.99.                                      000000103 14C
+   000220
+   000221               *01  WS-SUCCESFUL-DTL-LINE-1.
+   000222
+   000223               *01  WS-SUCCESFUL-DTL-LINE-2.
+   000224
+   000225                PROCEDURE DIVISION.
+   000226
+   000227               ****************************************************
+   000228               *                                                  *
+   000229               *       00000-MAIN-LINE-ROUTINE                    *
+   000230               *                                                  *
+   000231               *       1. PERFORM INITIALIZATION ROUTINE          *
+   000232               *       2. PERFORM HEADING ROUTINE                 *
+   000233               *       3. PERFORM PROCESS ROUTINE                 *
+   000234               *       4. PERFORM FINISH ROUTINE                  *
+   000235               *                                                  *
+   000236               ****************************************************
+   000237
+   000238                00000-MAIN-LINE-ROUTINE.
+   000239
+   000240                    PERFORM 10000-INITIALIZATION-ROUTINE.                                 262
+   000241
+   000242                    PERFORM 20000-HEADING-ROUTINE.                                        285
+   000243
+   000244                    PERFORM 30000-PROCESS-LOAN-DATA                                       313
+   000245                            UNTIL THERE-ARE-NO-MORE-RECORDS.                              59
+   000246
+   000247                    PERFORM 40000-FINISH-ROUTINE.                                         516
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     8
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000248
+   000249
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page     9
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000250               /
+   000251               ****************************************************
+   000252               *                                                  *
+   000253               *       10000-INITIALIZATION-ROUTINE               *
+   000254               *                                                  *
+   000255               *       1. OPENS ALL FILES                         *
+   000256               *       2. LOADS DATE IN HEADINGS                  *
+   000257               *       3. READ CONTROL CARD                       *
+   000258               *       4. CLOSE CONTROL CARD FILE                 *
+   000259               *                                                  *
+   000260               ****************************************************
+   000261
+   000262                10000-INITIALIZATION-ROUTINE.
+   000263
+   000264                    OPEN  INPUT LOAN-SUMMARY-FILE-I                                       30
+   000265                         OUTPUT LOAN-EXCEPTION-REPORT,                                    46
+   000266                                LOAN-SUCCESFUL-REPORT.                                    50
+   000267
+   000268                    MOVE FUNCTION CURRENT-DATE TO                                         IFN
+   000269                         WS-CURRENT-DATE-TIME.                                            61
+   000270
+   000271                         MOVE WS-CURRENT-DATE-DD    TO                                    65
+   000272                              WS-HEADING-DATE-DD.                                         115
+   000273                         MOVE WS-CURRENT-DATE-MM    TO                                    64
+   000274                              WS-HEADING-DATE-MM.                                         114
+   000275                         MOVE WS-CURRENT-DATE-CCYY  TO                                    63
+   000276                              WS-HEADING-DATE-CCYY.                                       113
+   000277                         MOVE WS-CURRENT-TIME-HH    TO                                    67
+   000278                              WS-HEADING-TIME-HH.                                         117
+   000279                         MOVE WS-CURRENT-TIME-MM    TO                                    68
+   000280                              WS-HEADING-TIME-MM.                                         118
+   000281                         MOVE WS-CURRENT-TIME-SS    TO                                    69
+   000282                              WS-HEADING-TIME-SS.                                         119
+   000283
+   000284
+   000285                20000-HEADING-ROUTINE.
+   000286
+   000287                    ADD  +1   TO WS-PAGE-CTR.                                             108
+   000288                    MOVE WS-PAGE-CTR TO WS-PAGE-NUM.                                      108 124
+   000289
+   000290                    WRITE LOAN-SUCCESFUL-RPT FROM WS-HEADING-LINE-1                       52 111
+   000291                          AFTER ADVANCING PAGE.
+   000292                    WRITE LOAN-SUCCESFUL-RPT FROM WS-HEADING-LINE-2                       52 127
+   000293                          AFTER ADVANCING 1 LINE.
+   000294                    WRITE LOAN-SUCCESFUL-RPT FROM WS-HEADING-LINE-3                       52 135
+   000295                          AFTER ADVANCING 1 LINE.
+   000296               *    WRITE LOAN-SUCCESFUL-RPT FROM WS-RPT-TITLE-LINE-01
+   000297               *          AFTER ADVANCING 1 LINE.
+   000298               *    WRITE LOAN-SUCCESFUL-RPT FROM WS-RPT-TITLE-LINE-02
+   000299               *          AFTER ADVANCING 2 LINE.
+   000300
+   000301
+   000302               *    MOVE SPACES TO SALESMAN-RPT-RCD.
+   000303               *    WRITE SALESMAN-RPT-RCD
+   000304               *          AFTER ADVANCING 1 LINE.
+   000305
+   000306                    MOVE +5 TO WS-LINE-CTR.                                               104
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    10
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000307               /
+   000308               ****************************************************
+   000309               *                                                  *
+   000310               *       30000-PROCESS-CUSTMER-MASTER-I             *
+   000311               *                                                  *
+   000312               ****************************************************
+   000313                30000-PROCESS-LOAN-DATA.
+   000314                    READ LOAN-SUMMARY-FILE-I                                              30
+   000315                         AT END
+   000316      1                     MOVE 'N' TO ARE-THERE-MORE-RECORDS                            57
+   000317
+   000318                         NOT AT END
+   000319      1                     PERFORM 31000-INPUT-DATA-FROM-FILE                            328
+   000320                    END-READ.
+   000321
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    11
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000322               /
+   000323               ****************************************************
+   000324               *                                                  *
+   000325               *       31000-PROCESS-SALESMAN-MASTER              *
+   000326               *                                                  *
+   000327               ****************************************************
+   000328                31000-INPUT-DATA-FROM-FILE.
+   000329
+   000330                     PERFORM 32000-VALIDATE-INPUT-DATA.                                   337
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    12
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000331               /
+   000332               ****************************************************
+   000333               *                                                  *
+   000334               *       32000-CALC-ADDED-COMMISSION.               *
+   000335               *                                                  *
+   000336               ****************************************************
+   000337                32000-VALIDATE-INPUT-DATA.
+   000338
+   000339                    EVALUATE LOAN-TYPE-VAL                                                34
+   000340      1                WHEN '100N' MOVE  'NEW CAR'          TO WS-CMPT-LOAN-NAME          84
+   000341      1                WHEN '100U' MOVE  'USED CAR'         TO WS-CMPT-LOAN-NAME          84
+   000342      1                WHEN '200'  MOVE  'BOAT'             TO WS-CMPT-LOAN-NAME          84
+   000343      1                WHEN '300'  MOVE  'SIGNATURE LOAN'   TO WS-CMPT-LOAN-NAME          84
+   000344      1                WHEN '400'  MOVE  'R/V'              TO WS-CMPT-LOAN-NAME          84
+   000345      1                WHEN '500'  MOVE  'MOTORCYCLE'       TO WS-CMPT-LOAN-NAME          84
+   000346      1                WHEN '600'  MOVE  'MORTGAGE'         TO WS-CMPT-LOAN-NAME          84
+   000347      1                WHEN '700'  MOVE  'HOME EQUITY'      TO WS-CMPT-LOAN-NAME          84
+   000348      1                WHEN '800'  MOVE  'HOME IMPROVEMENT' TO WS-CMPT-LOAN-NAME          84
+   000349      1                WHEN OTHER MOVE 'Y' TO WS-EXCEPTION-LOAN-TYPE,                     75
+   000350      1                                       WS-EXCEPTION-CHECK                          79
+   000351                    END-EVALUATE.
+   000352
+   000353
+   000354                    IF PRINCIPAL-AMT > 0                                                  35
+   000355               *       IF PRINCIPAL-AMT IS NUMERIC
+   000356      1                  MOVE PRINCIPAL-AMT TO WS-CMPT-PRINCIPAL                          35 87
+   000357                       ELSE
+   000358      1                  MOVE 'Y' TO WS-EXCEPTION-PRINCIPAL, WS-EXCEPTION-CHECK           76 79
+   000359               *       END-IF
+   000360                    END-IF.
+   000361
+   000362
+   000363                    IF TERM-IN-YEARS > 0                                                  37
+   000364      1                IF TERM-IN-YEARS IS NUMERIC                                        37
+   000365      2                  MOVE TERM-IN-YEARS TO WS-CMPT-TERM-IN-YEARS                      37 88
+   000366      1             ELSE
+   000367      2                  MOVE 'Y' TO WS-EXCEPTION-TERM-YEAR, WS-EXCEPTION-CHECK           77 79
+   000368      1                  END-IF
+   000369                    END-IF.
+   000370
+   000371
+   000372                    INSPECT ANNUAL-PCT-RT TALLYING WS-DECIMAL-COUNT FOR ALL '.'.          39 80
+   000373                    IF WS-DECIMAL-COUNT = 0                                               80
+   000374      1                  MOVE ANNUAL-PCT-RT TO WS-CMPT-ANNUAL-PCT-RT                      39 85
+   000375                    ELSE
+   000376      1                  MOVE 'Y' TO WS-EXCEPTION-ANNUAL-PR, WS-EXCEPTION-CHECK           78 79
+   000377                    END-IF.
+   000378                    MOVE 0 TO WS-DECIMAL-COUNT.                                           80
+   000379                    IF ANNUAL-PCT-RT = 0                                                  39
+   000380      1                  MOVE 'Y' TO WS-EXCEPTION-ANNUAL-PR, WS-EXCEPTION-CHECK           78 79
+   000381                    END-IF.
+   000382
+   000383                    IF WS-EXCEPTION-CHECK = 'Y'                                           79
+   000384      1                   PERFORM 33000-PROCESS-EXCEPTION                                 396
+   000385      1                   MOVE 'N' TO WS-EXCEPTION-CHECK                                  79
+   000386                    ELSE
+   000387      1                   PERFORM 34000-COMPUTE-SCHEDULE-DATA                             428
+   000388                    END-IF.
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    13
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000389
+   000390
+   000391               ****************************************************
+   000392               *                                                  *
+   000393               *       32100-CALC-QTR-COMMISSION-BONUS            *
+   000394               *                                                  *
+   000395               ****************************************************
+   000396                33000-PROCESS-EXCEPTION.
+   000397
+   000398                      MOVE BORROWER-NAME TO WS-EXC-DTL-NAME.                              33 152
+   000399                      MOVE PRINCIPAL-AMT TO WS-EXC-DTL-PRINC-AMT.                         35 154
+   000400
+   000401                      WRITE LOAN-EXCEPTION-RPT FROM WS-EXCEPTION-DTL-SUMMARY              48 149
+   000402                                 AFTER ADVANCING 2 LINES.
+   000403
+   000404                      IF WS-EXCEPTION-LOAN-TYPE = 'Y' THEN                                75
+   000405      1                  WRITE LOAN-EXCEPTION-RPT FROM WS-EXCEPTION-DTL-LOAN              48 156
+   000406      1                                  AFTER ADVANCING 1 LINE
+   000407                      END-IF.
+   000408                      IF WS-EXCEPTION-PRINCIPAL = 'Y' THEN                                76
+   000409      1                  WRITE LOAN-EXCEPTION-RPT FROM WS-EXCEPTION-DTL-PRIN              48 160
+   000410      1                                  AFTER ADVANCING 1 LINE
+   000411                      END-IF.
+   000412                      IF WS-EXCEPTION-TERM-YEAR = 'Y' THEN                                77
+   000413      1                  WRITE LOAN-EXCEPTION-RPT FROM WS-EXCEPTION-DTL-YEAR              48 164
+   000414      1                                  AFTER ADVANCING 1 LINE
+   000415                      END-IF.
+   000416                      IF WS-EXCEPTION-ANNUAL-PR = 'Y' THEN                                78
+   000417      1                  WRITE LOAN-EXCEPTION-RPT FROM WS-EXCEPTION-DTL-RATE              48 168
+   000418      1                                  AFTER ADVANCING 1 LINE
+   000419                      END-IF.
+   000420
+   000421                      MOVE 'N' TO WS-EXCEPTION-LOAN-TYPE, WS-EXCEPTION-PRINCIPAL,         75 76
+   000422                               WS-EXCEPTION-TERM-YEAR, WS-EXCEPTION-ANNUAL-PR.            77 78
+   000423
+   000424               ****************************************************
+   000425               *                                                  *
+   000426               *       33000-PRINT-DETAIL-LINES                   *
+   000427               ****************************************************
+   000428                34000-COMPUTE-SCHEDULE-DATA.
+   000429
+   000430                    MOVE LOAN-TYPE-VAL TO WS-CMPT-LOAN-TYPE.                              34 83
+   000431                    MOVE TERM-IN-YEARS TO WS-CMPT-TERM-YEAR.                              37 89
+   000432               *    MOVE ANNUAL-PCT-RT TO WS-CMPT-ANNUAL-RT.
+   000433                    MOVE FIRST-PAYMENT TO WS-CMPT-PYMT-DATE.                              41 90
+   000434
+   000435                    COMPUTE WS-TERM-MNTHS-LEFT =                                          100
+   000436                            WS-CMPT-TERM-YEAR * 12.                                       89
+   000437                    COMPUTE WS-NUMB-OF-MONTHS =                                           101
+   000438                            WS-CMPT-TERM-YEAR * 12.                                       89
+   000439                    COMPUTE WS-CMPT-I = ANNUAL-PCT-RT / 100.                              93 39
+   000440                    MOVE    WS-CMPT-PRINCIPAL TO WS-CMPT-A.                               87 91
+   000441                    MOVE    WS-CMPT-PRINCIPAL TO WS-CMPT-B.                               87 92
+   000442                    MOVE    WS-NUMB-OF-MONTHS TO WS-CMPT-N.                               101 94
+   000443
+   000444                    PERFORM 34100-PRINT-CMPT-SCHEDULE-SUM                                 479
+   000445
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    14
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+0  000446                    PERFORM 34300-COMPUTE-SCHEDULE UNTIL WS-TERM-MNTHS-LEFT = 0.          448 100
+   000447
+   000448                34300-COMPUTE-SCHEDULE.
+   000449               *
+   000450
+   000451
+   000452                       COMPUTE WS-CMPT-MNTHLY-PMT =                                       96
+
+ ==000452==> IGYPG3113-W Truncation of high-order digit positions may occur due to precision of
+                         intermediate results exceeding 30 digits.
+
+   000453                    (WS-CMPT-A * WS-CMPT-I * ( (1 + WS-CMPT-I) ** WS-CMPT-N) ) /          91 93 93 94
+   000454                              ( ( (1 + WS-CMPT-I) ** WS-CMPT-N) - 1 ).                    93 94
+   000455
+   000456                       COMPUTE WS-CMPT-INTEREST-DUE =                                     97
+   000457                               WS-CMPT-I * WS-CMPT-B.                                     93 92
+   000458
+   000459                       COMPUTE WS-CMPT-PRINCIPAL-AMT =                                    98
+   000460                               WS-CMPT-MNTHLY-PMT - WS-CMPT-INTEREST-DUE.                 96 97
+   000461
+   000462                       COMPUTE WS-CMPT-PRINCIPAL-END =                                    99
+   000463                               WS-CMPT-B - WS-CMPT-MNTHLY-PMT.                            92 96
+   000464
+   000465                    PERFORM 34500-PRINT-CMPT-SCHEDULE-DTL.                                493
+   000466
+   000467                    MOVE WS-CMPT-PRINCIPAL-END TO WS-CMPT-B.                              99 92
+   000468
+   000469                    COMPUTE WS-TERM-MNTHS-LEFT = WS-TERM-MNTHS-LEFT - 1.                  100 100
+   000470
+   000471               *    ADD 1 TO THE MONTH
+   000472               *    IF MONTH = 13 SET 1 TO MONTH
+   000473
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    15
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000474               /
+   000475               ****************************************************
+   000476               *                                                  *
+   000477               *       33000-PRINT-DETAIL-LINES                   *
+   000478               ****************************************************
+   000479                34100-PRINT-CMPT-SCHEDULE-SUM.
+   000480
+   000481                    MOVE BORROWER-NAME     TO WS-SUC-SUM-NAME.                            33 177
+   000482                    MOVE WS-CMPT-LOAN-NAME TO WS-SUC-SUM-TYPE.                            84 180
+   000483                    MOVE PRINCIPAL-AMT     TO WS-SUC-SUM-PRIN.                            35 183
+   000484                    MOVE TERM-IN-YEARS     TO WS-SUC-SUM-TERM.                            37 186
+   000485                    MOVE ANNUAL-PCT-RT     TO WS-SUC-SUM-APR.                             39 189
+   000486
+   000487                    WRITE LOAN-SUCCESFUL-RPT FROM WS-SUCCESFUL-RPT-SUMMARY-L1             52 173
+   000488                                             AFTER ADVANCING 2 LINES.
+   000489               ****************************************************
+   000490               *                                                  *
+   000491               *       33000-PRINT-DETAIL-LINES                   *
+   000492               ****************************************************
+   000493                34500-PRINT-CMPT-SCHEDULE-DTL.
+   000494
+   000495                    MOVE WS-CMPT-PYMT-DATE     TO WS-SUC-DTL-PAYDAY.                      90 208
+   000496               *    MOVE WS-TERM-MNTHS-LEFT    TO WS-SUC-DTL-JUNK.
+   000497                    MOVE WS-CMPT-B             TO WS-SUC-DTL-BEGBAL.                      92 211
+   000498                    MOVE WS-CMPT-MNTHLY-PMT    TO WS-SUC-DTL-MONTHL.                      96 213
+   000499                    MOVE WS-CMPT-PRINCIPAL-AMT TO WS-SUC-DTL-PRNAMT.                      98 215
+   000500                    MOVE WS-CMPT-INTEREST-DUE  TO WS-SUC-DTL-INTAMT.                      97 217
+   000501                    MOVE WS-CMPT-PRINCIPAL-END TO WS-SUC-DTL-ENDBAL.                      99 219
+   000502
+   000503                    WRITE LOAN-SUCCESFUL-RPT FROM WS-SUCCESFUL-RPT-DETAIL-L1              52 193
+   000504                                             AFTER ADVANCING 1 LINE.
+   000505
+   000506                    WRITE LOAN-SUCCESFUL-RPT FROM WS-SUCCESFUL-RPT-DETAIL-L2              52 206
+   000507                                             AFTER ADVANCING 1 LINE.
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    16
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000508               /
+   000509               ****************************************************
+   000510               *                                                  *
+   000511               *       40000-FINISH-ROUTINE                       *
+   000512               *                                                  *
+   000513               *       1. CLOSE THE FILES                         *
+   000514               *                                                  *
+   000515               ****************************************************
+   000516                40000-FINISH-ROUTINE.
+   000517
+   000518                    CLOSE LOAN-SUMMARY-FILE-I,                                            30
+   000519                          LOAN-EXCEPTION-REPORT                                           46
+   000520                          LOAN-SUCCESFUL-REPORT.                                          50
+   000521                    STOP RUN.
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    17
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference
+   000522               /
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    18
+0An "M" preceding a data-name reference indicates that the data-name is modified by this reference.
+
+  Defined   Cross-reference of data names   References
+
+       39   ANNUAL-PCT-RT. . . . . . . . .  372 374 379 439 485
+       57   ARE-THERE-MORE-RECORDS . . . .  M316
+       33   BORROWER-NAME. . . . . . . . .  398 481
+       41   FIRST-PAYMENT. . . . . . . . .  433
+       32   INPUT-LOAN-INFO
+       46   LOAN-EXCEPTION-REPORT. . . . .  22 265 519
+       48   LOAN-EXCEPTION-RPT . . . . . .  M401 M405 M409 M413 M417
+       50   LOAN-SUCCESFUL-REPORT. . . . .  24 266 520
+       52   LOAN-SUCCESFUL-RPT . . . . . .  M290 M292 M294 M487 M503 M506
+       30   LOAN-SUMMARY-FILE-I. . . . . .  20 264 314 518
+       34   LOAN-TYPE-VAL. . . . . . . . .  339 430
+       35   PRINCIPAL-AMT. . . . . . . . .  354 356 399 483
+       56   PROGRAM-INDICATORS
+       37   TERM-IN-YEARS. . . . . . . . .  363 364 365 431 484
+       58   THERE-ARE-MORE-RECORDS
+       59   THERE-ARE-NO-MORE-RECORDS. . .  245
+       91   WS-CMPT-A. . . . . . . . . . .  M440 453
+       85   WS-CMPT-ANNUAL-PCT-RT. . . . .  M374
+       86   WS-CMPT-ANNUAL-RT
+       92   WS-CMPT-B. . . . . . . . . . .  M441 457 463 M467 497
+       93   WS-CMPT-I. . . . . . . . . . .  M439 453 453 454 457
+       97   WS-CMPT-INTEREST-DUE . . . . .  M456 460 500
+       84   WS-CMPT-LOAN-NAME. . . . . . .  M340 M341 M342 M343 M344 M345 M346 M347 M348 482
+       83   WS-CMPT-LOAN-TYPE. . . . . . .  M430
+       96   WS-CMPT-MNTHLY-PMT . . . . . .  M452 460 463 498
+       94   WS-CMPT-N. . . . . . . . . . .  M442 453 454
+       87   WS-CMPT-PRINCIPAL. . . . . . .  M356 440 441
+       98   WS-CMPT-PRINCIPAL-AMT. . . . .  M459 499
+       99   WS-CMPT-PRINCIPAL-END. . . . .  M462 467 501
+       90   WS-CMPT-PYMT-DATE. . . . . . .  M433 495
+       88   WS-CMPT-TERM-IN-YEARS. . . . .  M365
+       89   WS-CMPT-TERM-YEAR. . . . . . .  M431 436 438
+       82   WS-CMPT-VAL
+       62   WS-CURRENT-DATE
+       63   WS-CURRENT-DATE-CCYY . . . . .  275
+       65   WS-CURRENT-DATE-DD . . . . . .  271
+       64   WS-CURRENT-DATE-MM . . . . . .  273
+       61   WS-CURRENT-DATE-TIME . . . . .  M269
+       66   WS-CURRENT-TIME
+       67   WS-CURRENT-TIME-HH . . . . . .  277
+       68   WS-CURRENT-TIME-MM . . . . . .  279
+       69   WS-CURRENT-TIME-SS . . . . . .  281
+       80   WS-DECIMAL-COUNT . . . . . . .  M372 373 M378
+      152   WS-EXC-DTL-NAME. . . . . . . .  M398
+      154   WS-EXC-DTL-PRINC-AMT . . . . .  M399
+       78   WS-EXCEPTION-ANNUAL-PR . . . .  M376 M380 416 M422
+       79   WS-EXCEPTION-CHECK . . . . . .  M350 M358 M367 M376 M380 383 M385
+      156   WS-EXCEPTION-DTL-LOAN. . . . .  405
+      160   WS-EXCEPTION-DTL-PRIN. . . . .  409
+      168   WS-EXCEPTION-DTL-RATE. . . . .  417
+      149   WS-EXCEPTION-DTL-SUMMARY . . .  401
+      164   WS-EXCEPTION-DTL-YEAR. . . . .  413
+       75   WS-EXCEPTION-LOAN-TYPE . . . .  M349 404 M421
+       76   WS-EXCEPTION-PRINCIPAL . . . .  M358 408 M421
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    19
+0 Defined   Cross-reference of data names   References
+
+0      77   WS-EXCEPTION-TERM-YEAR . . . .  M367 412 M422
+       74   WS-EXCEPTION-VARS
+       72   WS-FILL
+      112   WS-HEADING-DATE
+      113   WS-HEADING-DATE-CCYY . . . . .  M276
+      115   WS-HEADING-DATE-DD . . . . . .  M272
+      114   WS-HEADING-DATE-MM . . . . . .  M274
+      111   WS-HEADING-LINE-1. . . . . . .  290
+      127   WS-HEADING-LINE-2. . . . . . .  292
+      135   WS-HEADING-LINE-3. . . . . . .  294
+      116   WS-HEADING-TIME
+      117   WS-HEADING-TIME-HH . . . . . .  M278
+      118   WS-HEADING-TIME-MM . . . . . .  M280
+      119   WS-HEADING-TIME-SS . . . . . .  M282
+      104   WS-LINE-CTR. . . . . . . . . .  M306
+      101   WS-NUMB-OF-MONTHS. . . . . . .  M437 442
+      108   WS-PAGE-CTR. . . . . . . . . .  M287 288
+      124   WS-PAGE-NUM. . . . . . . . . .  M288
+      103   WS-PGM-VARS
+      105   WS-RECD-CTR
+      107   WS-RES-CTR
+      106   WS-RGN-CTR
+       71   WS-SPACER
+      211   WS-SUC-DTL-BEGBAL. . . . . . .  M497
+      219   WS-SUC-DTL-ENDBAL. . . . . . .  M501
+      217   WS-SUC-DTL-INTAMT. . . . . . .  M500
+      213   WS-SUC-DTL-MONTHL. . . . . . .  M498
+      208   WS-SUC-DTL-PAYDAY. . . . . . .  M495
+      215   WS-SUC-DTL-PRNAMT. . . . . . .  M499
+      189   WS-SUC-SUM-APR . . . . . . . .  M485
+      177   WS-SUC-SUM-NAME. . . . . . . .  M481
+      183   WS-SUC-SUM-PRIN. . . . . . . .  M483
+      186   WS-SUC-SUM-TERM. . . . . . . .  M484
+      180   WS-SUC-SUM-TYPE. . . . . . . .  M482
+      193   WS-SUCCESFUL-RPT-DETAIL-L1 . .  503
+      206   WS-SUCCESFUL-RPT-DETAIL-L2 . .  506
+      173   WS-SUCCESFUL-RPT-SUMMARY-L1. .  487
+      100   WS-TERM-MNTHS-LEFT . . . . . .  M435 446 M469 469
+      121   WS-TITLE-L1
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    20
+0Context usage is indicated by the letter preceding a procedure-name reference.
+ These letters and their meanings are:
+     A = ALTER (procedure-name)
+     D = GO TO (procedure-name) DEPENDING ON
+     E = End of range of (PERFORM) through (procedure-name)
+     G = GO TO (procedure-name)
+     P = PERFORM (procedure-name)
+     T = (ALTER) TO PROCEED TO (procedure-name)
+     U = USE FOR DEBUGGING (procedure-name)
+
+  Defined   Cross-reference of procedures   References
+
+      238   00000-MAIN-LINE-ROUTINE
+      262   10000-INITIALIZATION-ROUTINE .  P240
+      285   20000-HEADING-ROUTINE. . . . .  P242
+      313   30000-PROCESS-LOAN-DATA. . . .  P244
+      328   31000-INPUT-DATA-FROM-FILE . .  P319
+      337   32000-VALIDATE-INPUT-DATA. . .  P330
+      396   33000-PROCESS-EXCEPTION. . . .  P384
+      428   34000-COMPUTE-SCHEDULE-DATA. .  P387
+      479   34100-PRINT-CMPT-SCHEDULE-SUM.  P444
+      448   34300-COMPUTE-SCHEDULE . . . .  P446
+      493   34500-PRINT-CMPT-SCHEDULE-DTL.  P465
+      516   40000-FINISH-ROUTINE . . . . .  P247
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    21
+0 Defined   Cross-reference of programs     References
+
+        2   PROG03
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    22
+0Data Division Map
+0Data Definition Attribute codes (rightmost column) have the following meanings:
+     D = Object of OCCURS DEPENDING    G = GLOBAL                             S = Spanned file
+     E = EXTERNAL                      O = Has OCCURS clause                  U = Undefined format file
+     F = Fixed-length file             OG= Group has own length definition    V = Variable-length file
+     FB= Fixed-length blocked file     R = REDEFINES                          VB= Variable-length blocked file
+     X = Unallocated
+0Source   Hierarchy and                                    Base      Displacement  Asmblr Data                      Data Def
+ LineID   Data Name                                        Locator     Structure   Definition        Data Type      Attributes
+      2  PROGRAM-ID PROG03------------------------------------------------------------------------------------------------------*
+     30   FD LOAN-SUMMARY-FILE-I . . . . . . . . . . . . . BLF=00001                                 QSAM           F
+     32   1  INPUT-LOAN-INFO . . . . . . . . . . . . . . . BLF=00001               DS 0CL80          Group
+     33     2  BORROWER-NAME . . . . . . . . . . . . . . . BLF=00001   000000000   DS 40C            Display
+     34     2  LOAN-TYPE-VAL . . . . . . . . . . . . . . . BLF=00001   000000040   DS 5C             Display
+     35     2  PRINCIPAL-AMT . . . . . . . . . . . . . . . BLF=00001   000000045   DS 11C            Disp-Num
+     36     2  FILLER. . . . . . . . . . . . . . . . . . . BLF=00001   000000056   DS 1C             Display
+     37     2  TERM-IN-YEARS . . . . . . . . . . . . . . . BLF=00001   000000057   DS 4C             Disp-Num
+     38     2  FILLER. . . . . . . . . . . . . . . . . . . BLF=00001   000000061   DS 1C             Display
+     39     2  ANNUAL-PCT-RT . . . . . . . . . . . . . . . BLF=00001   000000062   DS 4C             Disp-Num
+     40     2  FILLER. . . . . . . . . . . . . . . . . . . BLF=00001   000000066   DS 1C             Display
+     41     2  FIRST-PAYMENT . . . . . . . . . . . . . . . BLF=00001   000000067   DS 8C             Display
+     42     2  FILLER. . . . . . . . . . . . . . . . . . . BLF=00001   000000075   DS 5C             Display
+     46   FD LOAN-EXCEPTION-REPORT . . . . . . . . . . . . BLF=00002                                 QSAM           F
+     48   1  LOAN-EXCEPTION-RPT. . . . . . . . . . . . . . BLF=00002               DS 132C           Display
+     50   FD LOAN-SUCCESFUL-REPORT . . . . . . . . . . . . BLF=00003                                 QSAM           F
+     52   1  LOAN-SUCCESFUL-RPT. . . . . . . . . . . . . . BLF=00003               DS 132C           Display
+     56   1  PROGRAM-INDICATORS. . . . . . . . . . . . . .                         DS 0CL1           Group
+     57     2  ARE-THERE-MORE-RECORDS. . . . . . . . . . .             000000000   DS 1C             Display
+     58     88 THERE-ARE-MORE-RECORDS. . . . . . . . . . .
+     59     88 THERE-ARE-NO-MORE-RECORDS . . . . . . . . .
+     61   1  WS-CURRENT-DATE-TIME. . . . . . . . . . . . .                         DS 0CL14          Group
+     62     2  WS-CURRENT-DATE . . . . . . . . . . . . . .             000000000   DS 0CL8           Group
+     63       3  WS-CURRENT-DATE-CCYY. . . . . . . . . . .             000000000   DS 4C             Disp-Num
+     64       3  WS-CURRENT-DATE-MM. . . . . . . . . . . .             000000004   DS 2C             Disp-Num
+     65       3  WS-CURRENT-DATE-DD. . . . . . . . . . . .             000000006   DS 2C             Disp-Num
+     66     2  WS-CURRENT-TIME . . . . . . . . . . . . . .             000000008   DS 0CL6           Group
+     67       3  WS-CURRENT-TIME-HH. . . . . . . . . . . .             000000008   DS 2C             Disp-Num
+     68       3  WS-CURRENT-TIME-MM. . . . . . . . . . . .             000000010   DS 2C             Disp-Num
+     69       3  WS-CURRENT-TIME-SS. . . . . . . . . . . .             000000012   DS 2C             Disp-Num
+     71   1  WS-SPACER . . . . . . . . . . . . . . . . . .                         DS 0CL132         Group
+     72     2  WS-FILL . . . . . . . . . . . . . . . . . .             000000000   DS 132C           Display
+     74   1  WS-EXCEPTION-VARS . . . . . . . . . . . . . .                         DS 0CL6           Group
+     75     2  WS-EXCEPTION-LOAN-TYPE. . . . . . . . . . .             000000000   DS 1C             Display
+     76     2  WS-EXCEPTION-PRINCIPAL. . . . . . . . . . .             000000001   DS 1C             Display
+     77     2  WS-EXCEPTION-TERM-YEAR. . . . . . . . . . .             000000002   DS 1C             Display
+     78     2  WS-EXCEPTION-ANNUAL-PR. . . . . . . . . . .             000000003   DS 1C             Display
+     79     2  WS-EXCEPTION-CHECK. . . . . . . . . . . . .             000000004   DS 1C             Display
+     80     2  WS-DECIMAL-COUNT. . . . . . . . . . . . . .             000000005   DS 1C             Disp-Num
+     82   1  WS-CMPT-VAL . . . . . . . . . . . . . . . . .                         DS 0CL137         Group
+     83     2  WS-CMPT-LOAN-TYPE . . . . . . . . . . . . .             000000000   DS 4C             Display
+     84     2  WS-CMPT-LOAN-NAME . . . . . . . . . . . . .             000000004   DS 18C            Display
+     85     2  WS-CMPT-ANNUAL-PCT-RT . . . . . . . . . . .             000000022   DS 6C             Disp-Num
+     86     2  WS-CMPT-ANNUAL-RT . . . . . . . . . . . . .             000000028   DS 6C             Disp-Num
+     87     2  WS-CMPT-PRINCIPAL . . . . . . . . . . . . .             000000034   DS 11C            Disp-Num
+     88     2  WS-CMPT-TERM-IN-YEARS . . . . . . . . . . .             000000045   DS 2C             Disp-Num
+     89     2  WS-CMPT-TERM-YEAR . . . . . . . . . . . . .             000000047   DS 3C             Disp-Num
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    23
+0Source   Hierarchy and                                    Base      Displacement  Asmblr Data                      Data Def
+ LineID   Data Name                                        Locator     Structure   Definition        Data Type      Attributes
+     90     2  WS-CMPT-PYMT-DATE . . . . . . . . . . . . .             000000050   DS 8C             Disp-Num
+     91     2  WS-CMPT-A . . . . . . . . . . . . . . . . .             000000058   DS 11C            Disp-Num
+     92     2  WS-CMPT-B . . . . . . . . . . . . . . . . .             000000069   DS 11C            Disp-Num
+     93     2  WS-CMPT-I . . . . . . . . . . . . . . . . .             000000080   DS 4C             Disp-Num
+     94     2  WS-CMPT-N . . . . . . . . . . . . . . . . .             000000084   DS 3C             Disp-Num
+     96     2  WS-CMPT-MNTHLY-PMT. . . . . . . . . . . . .             000000087   DS 12C            Disp-Num
+     97     2  WS-CMPT-INTEREST-DUE. . . . . . . . . . . .             000000099   DS 10C            Disp-Num
+     98     2  WS-CMPT-PRINCIPAL-AMT . . . . . . . . . . .             000000109   DS 10C            Disp-Num
+     99     2  WS-CMPT-PRINCIPAL-END . . . . . . . . . . .             000000119   DS 12C            Disp-Num
+    100     2  WS-TERM-MNTHS-LEFT. . . . . . . . . . . . .             000000131   DS 3C             Disp-Num
+    101     2  WS-NUMB-OF-MONTHS . . . . . . . . . . . . .             000000134   DS 3C             Disp-Num
+    103   1  WS-PGM-VARS . . . . . . . . . . . . . . . . .                         DS 0CL13          Group
+    104     2  WS-LINE-CTR . . . . . . . . . . . . . . . .             000000000   DS 2C             Disp-Num
+    105     2  WS-RECD-CTR . . . . . . . . . . . . . . . .             000000002   DS 2C             Disp-Num
+    106     2  WS-RGN-CTR. . . . . . . . . . . . . . . . .             000000004   DS 2C             Disp-Num
+    107     2  WS-RES-CTR. . . . . . . . . . . . . . . . .             000000006   DS 2C             Disp-Num
+    108     2  WS-PAGE-CTR . . . . . . . . . . . . . . . .             000000008   DS 5C             Disp-Num
+    111   1  WS-HEADING-LINE-1 . . . . . . . . . . . . . .                         DS 0CL81          Group
+    112     2  WS-HEADING-DATE . . . . . . . . . . . . . .             000000000   DS 0CL8           Group
+    113       3  WS-HEADING-DATE-CCYY. . . . . . . . . . .             000000000   DS 4C             Disp-Num
+    114       3  WS-HEADING-DATE-MM. . . . . . . . . . . .             000000004   DS 2C             Disp-Num
+    115       3  WS-HEADING-DATE-DD. . . . . . . . . . . .             000000006   DS 2C             Disp-Num
+    116     2  WS-HEADING-TIME . . . . . . . . . . . . . .             000000008   DS 0CL6           Group
+    117       3  WS-HEADING-TIME-HH. . . . . . . . . . . .             000000008   DS 2C             Disp-Num
+    118       3  WS-HEADING-TIME-MM. . . . . . . . . . . .             000000010   DS 2C             Disp-Num
+    119       3  WS-HEADING-TIME-SS. . . . . . . . . . . .             000000012   DS 2C             Disp-Num
+    120     2  FILLER. . . . . . . . . . . . . . . . . . .             000000014   DS 40C            Display
+    121     2  WS-TITLE-L1 . . . . . . . . . . . . . . . .             000000054   DS 18C            Display
+    123     2  FILLER. . . . . . . . . . . . . . . . . . .             000000072   DS 6C             Display
+    124     2  WS-PAGE-NUM . . . . . . . . . . . . . . . .             000000078   DS 3C             Display
+    127   1  WS-HEADING-LINE-2 . . . . . . . . . . . . . .                         DS 0CL110         Group
+    128     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 25C            Display
+    130     2  FILLER. . . . . . . . . . . . . . . . . . .             000000025   DS 40C            Display
+    131     2  FILLER. . . . . . . . . . . . . . . . . . .             000000065   DS 45C            Display
+    135   1  WS-HEADING-LINE-3 . . . . . . . . . . . . . .                         DS 0CL132         Group
+    136     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 132C           Display
+    149   1  WS-EXCEPTION-DTL-SUMMARY. . . . . . . . . . .                         DS 0CL86          Group
+    150     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 5C             Display
+    151     2  FILLER. . . . . . . . . . . . . . . . . . .             000000005   DS 25C            Display
+    152     2  WS-EXC-DTL-NAME . . . . . . . . . . . . . .             000000030   DS 25C            Display
+    153     2  FILLER. . . . . . . . . . . . . . . . . . .             000000055   DS 20C            Display
+    154     2  WS-EXC-DTL-PRINC-AMT. . . . . . . . . . . .             000000075   DS 11C            Disp-Num
+    156   1  WS-EXCEPTION-DTL-LOAN . . . . . . . . . . . .                         DS 0CL60          Group
+    157     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 15C            Display
+    158     2  FILLER. . . . . . . . . . . . . . . . . . .             000000015   DS 45C            Display
+    160   1  WS-EXCEPTION-DTL-PRIN . . . . . . . . . . . .                         DS 0CL60          Group
+    161     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 15C            Display
+    162     2  FILLER. . . . . . . . . . . . . . . . . . .             000000015   DS 45C            Display
+    164   1  WS-EXCEPTION-DTL-YEAR . . . . . . . . . . . .                         DS 0CL60          Group
+    165     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 15C            Display
+    166     2  FILLER. . . . . . . . . . . . . . . . . . .             000000015   DS 45C            Display
+    168   1  WS-EXCEPTION-DTL-RATE . . . . . . . . . . . .                         DS 0CL60          Group
+    169     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 15C            Display
+    170     2  FILLER. . . . . . . . . . . . . . . . . . .             000000015   DS 45C            Display
+    173   1  WS-SUCCESFUL-RPT-SUMMARY-L1 . . . . . . . . .                         DS 0CL132         Group
+    174     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 2C             Display
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    24
+0Source   Hierarchy and                                    Base      Displacement  Asmblr Data                      Data Def
+ LineID   Data Name                                        Locator     Structure   Definition        Data Type      Attributes
+    175     2  FILLER. . . . . . . . . . . . . . . . . . .             000000002   DS 20C            Display
+    177     2  WS-SUC-SUM-NAME . . . . . . . . . . . . . .             000000022   DS 18C            Display
+    178     2  FILLER. . . . . . . . . . . . . . . . . . .             000000040   DS 11C            Display
+    180     2  WS-SUC-SUM-TYPE . . . . . . . . . . . . . .             000000051   DS 18C            Display
+    181     2  FILLER. . . . . . . . . . . . . . . . . . .             000000069   DS 16C            Display
+    183     2  WS-SUC-SUM-PRIN . . . . . . . . . . . . . .             000000085   DS 14C            Disp-Num-Edit
+    184     2  FILLER. . . . . . . . . . . . . . . . . . .             000000099   DS 17C            Display
+    186     2  WS-SUC-SUM-TERM . . . . . . . . . . . . . .             000000116   DS 2C             Disp-Num
+    187     2  FILLER. . . . . . . . . . . . . . . . . . .             000000118   DS 7C             Display
+    189     2  WS-SUC-SUM-APR. . . . . . . . . . . . . . .             000000125   DS 5C             Disp-Num-Edit
+    190     2  FILLER. . . . . . . . . . . . . . . . . . .             000000130   DS 2C             Display
+    193   1  WS-SUCCESFUL-RPT-DETAIL-L1. . . . . . . . . .                         DS 0CL122         Group
+    194     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 14C            Display
+    195     2  FILLER. . . . . . . . . . . . . . . . . . .             000000014   DS 5C             Display
+    196     2  FILLER. . . . . . . . . . . . . . . . . . .             000000019   DS 20C            Display
+    197     2  FILLER. . . . . . . . . . . . . . . . . . .             000000039   DS 1C             Display
+    198     2  FILLER. . . . . . . . . . . . . . . . . . .             000000040   DS 20C            Display
+    199     2  FILLER. . . . . . . . . . . . . . . . . . .             000000060   DS 1C             Display
+    200     2  FILLER. . . . . . . . . . . . . . . . . . .             000000061   DS 18C            Display
+    201     2  FILLER. . . . . . . . . . . . . . . . . . .             000000079   DS 1C             Display
+    202     2  FILLER. . . . . . . . . . . . . . . . . . .             000000080   DS 20C            Display
+    203     2  FILLER. . . . . . . . . . . . . . . . . . .             000000100   DS 2C             Display
+    204     2  FILLER. . . . . . . . . . . . . . . . . . .             000000102   DS 20C            Display
+    206   1  WS-SUCCESFUL-RPT-DETAIL-L2. . . . . . . . . .                         DS 0CL117         Group
+    207     2  FILLER. . . . . . . . . . . . . . . . . . .             000000000   DS 2C             Display
+    208     2  WS-SUC-DTL-PAYDAY . . . . . . . . . . . . .             000000002   DS 10C            AN-Edit
+    210     2  FILLER. . . . . . . . . . . . . . . . . . .             000000012   DS 7C             Display
+    211     2  WS-SUC-DTL-BEGBAL . . . . . . . . . . . . .             000000019   DS 14C            Disp-Num-Edit
+    212     2  FILLER. . . . . . . . . . . . . . . . . . .             000000033   DS 10C            Display
+    213     2  WS-SUC-DTL-MONTHL . . . . . . . . . . . . .             000000043   DS 10C            Disp-Num-Edit
+    214     2  FILLER. . . . . . . . . . . . . . . . . . .             000000053   DS 10C            Display
+    215     2  WS-SUC-DTL-PRNAMT . . . . . . . . . . . . .             000000063   DS 10C            Disp-Num-Edit
+    216     2  FILLER. . . . . . . . . . . . . . . . . . .             000000073   DS 10C            Display
+    217     2  WS-SUC-DTL-INTAMT . . . . . . . . . . . . .             000000083   DS 10C            Disp-Num-Edit
+    218     2  FILLER. . . . . . . . . . . . . . . . . . .             000000093   DS 10C            Display
+    219     2  WS-SUC-DTL-ENDBAL . . . . . . . . . . . . .             000000103   DS 14C            Disp-Num-Edit
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    25
+0LineID  Message code  Message text
+
+     30  IGYGR1216-I   A "RECORDING MODE" of "F" was assumed for file "LOAN-SUMMARY-FILE-I".
+
+     36  IGYDS1158-I   A non-level-88 "VALUE" clause was found in the "FILE SECTION" or "LINKAGE SECTION".  The "VALUE" clause was
+                       treated as comments.
+
+                       Same message on line:     38     40     42
+
+     46  IGYGR1216-I   A "RECORDING MODE" of "F" was assumed for file "LOAN-EXCEPTION-REPORT".
+
+     50  IGYGR1216-I   A "RECORDING MODE" of "F" was assumed for file "LOAN-SUCCESFUL-REPORT".
+
+    452  IGYPG3113-W   Truncation of high-order digit positions may occur due to precision of intermediate results exceeding 30
+                       digits.
+-Messages    Total    Informational    Warning    Error    Severe    Terminating
+0Printed:       9           8              1
+-* Statistics for COBOL program PROG03:
+ *    Source records = 522
+ *    Data Division statements = 90
+ *    Procedure Division statements = 97
+ *    Generated COBOL statements = 0
+ *    Program complexity factor = 104
+0End of compilation 1,  program PROG03,  highest severity 4.
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    26
+0LINEID  HEXLOC  VERBCODE                     LINEID  HEXLOC  VERBCODE                     LINEID  HEXLOC  VERBCODE
+ 000240  00018A  PERFORM                      000242  0001A8  PERFORM                      000244  0001C6  PERFORM
+ 000247  0001EA  PERFORM                      000264  000208  OPEN                         000268  0002B8  MOVE
+ 000271  0002D4  MOVE                         000273  0002DE  MOVE                         000275  0002E8  MOVE
+ 000277  0002F2  MOVE                         000279  0002FC  MOVE                         000281  000306  MOVE
+ 000287  000316  ADD                          000288  00032C  MOVE                         000290  000332  WRITE
+ 000292  000376  WRITE                        000294  0003BC  WRITE                        000306  0003FC  MOVE
+ 000314  00040A  READ                         000316  00044E  MOVE                         000319  000458  PERFORM
+ 000330  00047C  PERFORM                      000339  0004A0  EVALUATE                     000340  0004A0  WHEN
+ 000340  0004AE  MOVE                         000341  0004BE  WHEN                         000341  0004CC  MOVE
+ 000342  0004DC  WHEN                         000342  0004EA  MOVE                         000343  0004FA  WHEN
+ 000343  000508  MOVE                         000344  000518  WHEN                         000344  000526  MOVE
+ 000345  000536  WHEN                         000345  000544  MOVE                         000346  000554  WHEN
+ 000346  000562  MOVE                         000347  000572  WHEN                         000347  000580  MOVE
+ 000348  000590  WHEN                         000348  00059E  MOVE                         000349  0005AE  WHEN
+ 000349  0005AE  MOVE                         000354  0005BA  IF                           000356  0005CE  MOVE
+ 000358  0005EC  MOVE                         000363  0005F8  IF                           000364  00060C  IF
+ 000365  00062C  MOVE                         000367  000644  MOVE                         000372  000650  INSPECT
+ 000373  0006CE  IF                           000374  0006DC  MOVE                         000376  0006FA  MOVE
+ 000378  000706  MOVE                         000379  00070A  IF                           000380  00071E  MOVE
+ 000383  00072A  IF                           000384  000734  PERFORM                      000385  000752  MOVE
+ 000387  00075C  PERFORM                      000398  000780  MOVE                         000399  00078A  MOVE
+ 000401  0007A4  WRITE                        000404  0007EA  IF                           000405  0007F4  WRITE
+ 000408  00083A  IF                           000409  000844  WRITE                        000412  00088A  IF
+ 000413  000894  WRITE                        000416  0008DA  IF                           000417  0008E4  WRITE
+ 000421  00092A  MOVE                         000430  000948  MOVE                         000431  000952  MOVE
+ 000433  000966  MOVE                         000435  00097A  COMPUTE                      000437  000990  COMPUTE
+ 000439  0009A6  COMPUTE                      000440  0009DA  MOVE                         000441  0009E4  MOVE
+ 000442  0009EE  MOVE                         000444  0009F8  PERFORM                      000446  000A16  PERFORM
+ 000452  000A46  COMPUTE                      000456  000BE2  COMPUTE                      000459  000C04  COMPUTE
+ 000462  000C20  COMPUTE                      000465  000C50  PERFORM                      000467  000C6E  MOVE
+ 000469  000C74  COMPUTE                      000481  000C90  MOVE                         000482  000C9A  MOVE
+ 000483  000CA0  MOVE                         000484  000CCA  MOVE                         000485  000CDE  MOVE
+ 000487  000D00  WRITE                        000495  000D46  MOVE                         000497  000D84  MOVE
+ 000498  000DA6  MOVE                         000499  000DBE  MOVE                         000500  000DD6  MOVE
+ 000501  000DEE  MOVE                         000503  000E1C  WRITE                        000506  000E62  WRITE
+ 000518  000EAE  CLOSE                        000521  000F44  STOP
+
+
+
+                     CONSTANT AREA
+
+  001910 (+0)      00CCDDFF 00000000 D7D9D6C7 F0F30000 C9C7E9E2 D9E3C3C4 40000A00 00000000      |........PROG03..IGZSRTCD .......|
+  001930 (+32)     E2E8E2D6 E4E34040 000D0000 0E000F00 E8000000 F0F0F0F0 F0F0D500 F0000000      |SYSOUT  ........Y...000000N.0...|
+  001950 (+64)     F0F0F0F0 F0000000 F0F0F0F0 F0F00000 40400000 00000000 C2D6C2C3 C1E340C2      |00000...000000..  ......BOBCAT B|
+  001970 (+96)     C1D5D200 00000000 D7C1C7C5 407B0000 D7D9D6C7 D9C1D440 7BF37A40 C4C1E5C9      |ANK.....PAGE #..PROGRAM #3: DAVI|
+  001990 (+128)    C440E3C5 E2E3C5D9 00000000 00000000 D3D6C1D5 40C1D4D6 D9E3C9E9 C1E3C9D6      |D TESTER........LOAN AMORTIZATIO|
+  0019B0 (+160)    D540E2C3 C8C5C4E4 D3C50000 40000000 C3C1D5D5 D6E340D7 D9D6C3C5 E2E240D3      |N SCHEDULE.. ...CANNOT PROCESS L|
+  0019D0 (+192)    D6C1D540 C6D6D900 40E3D640 E3C8C540 C1D4D6E4 D5E340D6 C6405B40 00000000      |OAN FOR. TO THE AMOUNT OF $ ....|
+  0019F0 (+224)    E6C1D9D5 C9D5C740 C3D6D5C4 C9E3C9D6 D57A40C5 D9D9D6D9 40C9D540 D3D6C1D5      |WARNING CONDITION: ERROR IN LOAN|
+  001A10 (+256)    40E3E8D7 C5000000 C6C1E3C1 D340C3D6 D5C4C9E3 C9D6D57A 40C9D5E5 C1D3C9C4      | TYPE...FATAL CONDITION: INVALID|
+  001A30 (+288)    40D7D9C9 D5C3C9D7 C1D340E5 C1D3E4C5 00000000 00000000 C6C1E3C1 D340C3D6      | PRINCIPAL VALUE........FATAL CO|
+  001A50 (+320)    D5C4C9E3 C9D6D57A 40C9D5E5 C1D3C9C4 40E3C5D9 D440E8C5 C1D940E5 C1D3E4C5      |NDITION: INVALID TERM YEAR VALUE|
+  001A70 (+352)    00000000 00000000 C6C1E3C1 D340C3D6 D5C4C9E3 C9D6D57A 40C9D5E5 C1D3C9C4      |........FATAL CONDITION: INVALID|
+  001A90 (+384)    40C1D7D9 40E5C1D3 E4C50000 00000000 C1D4D6D9 E340E2C3 C8C5C4E4 D3C540C6      | APR VALUE......AMORT SCHEDULE F|
+  001AB0 (+416)    D6D97A40 00000000 D3D6C1D5 40E3E8D7 C57A4000 00000000 D7D9C9D5 C3C9D7C1      |OR: ....LOAN TYPE: .....PRINCIPA|
+  001AD0 (+448)    D340C1D4 E37A405B 00000000 00000000 4040E3C5 D9D440C9 D540E8C5 C1D9E27A      |L AMT: $........  TERM IN YEARS:|
+  001AF0 (+480)    40000000 00000000 40C1D7D9 7A400000 6C000000 00000000 40D7C1E8 D4C5D5E3      | ....... APR: ..%....... PAYMENT|
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    27
+0 001B10 (+512)    40C4C1E3 C57A0000 40000000 00000000 C2C5C7C9 D5D5C9D5 C740C2C1 D3C1D5C3      | DATE:.. .......BEGINNING BALANC|
+  001B30 (+544)    C57A4000 00000000 40D4D6D5 E3C8D3E8 40D7C1E8 D4C5D5E3 7A400000 00000000      |E: ..... MONTHLY PAYMENT: ......|
+  001B50 (+576)    40D7D9C9 D5C3C9D7 C1D340D7 C1C9C47A 40000000 00000000 40C9D5E3 C5D9C5E2      | PRINCIPAL PAID: ....... INTERES|
+  001B70 (+608)    E340D7C1 C9C47A40 00000000 00000000 40C5D5C4 C9D5C740 C2C1D3C1 D5C3C57A      |T PAID: ........ ENDING BALANCE:|
+  001B90 (+640)    40000000 00000000 D7D9D6C7 F0F30000 D5008000 00000000 80000000 00000000      | .......PROG03..N...............|
+  001BB0 (+672)    4000001C 08000000 A800A400 F0F50000 04420000 00000000 F1F0F0D5 00000000      | .......y.u.05..........100N....|
+  001BD0 (+704)    D5C5E640 C3C1D900 F1F0F0E4 00000000 E4E2C5C4 40C3C1D9 00000000 F2F0F000      |NEW CAR.100U....USED CAR....200.|
+  001BF0 (+736)    C2D6C1E3 00000000 F3F0F000 00000000 E2C9C7D5 C1E3E4D9 C540D3D6 C1D50000      |BOAT....300.....SIGNATURE LOAN..|
+  001C10 (+768)    F4F0F000 D961E500 F5F0F000 00000000 D4D6E3D6 D9C3E8C3 D3C50000 F6F0F000      |400.R/V.500.....MOTORCYCLE..600.|
+  001C30 (+800)    D4D6D9E3 C7C1C7C5 00000000 F7F0F000 C8D6D4C5 40C5D8E4 C9E3E800 F8F0F000      |MORTGAGE....700.HOME EQUITY.800.|
+  001C50 (+832)    C8D6D4C5 40C9D4D7 D9D6E5C5 D4C5D5E3 0000E800 00000000 F0F0F0F0 F0F0F0F0      |HOME IMPROVEMENT..Y.....00000000|
+  001C70 (+864)    F0F0F000 F0F0F0F0 10101010 10101010 10101010 10101010 10101010 10101010      |000.0000........................|
+  001C90 (+896)    10101010 10101010 10101010 10101010 10101010 10101010 10101010 10101010      |................................|
+  001CB0 (+928)    10101010 10101010 10101010 10101010 10101010 10101010 10101010 10101010      |................................|
+  001CD0 (+960)    10101010 10101010 10101010 10101010 10101010 10101010 10101010 10101010      |................................|
+  001CF0 (+992)    10101010 10101010 10101010 10101010 10101010 10101010 10101010 10101010      |................................|
+  001D10 (+1024)   10101010 10101010 10101010 10101010 10101010 10101010 10101010 10101010      |................................|
+  001D30 (+1056)   10101010 10101010 80808080 80808080 80801010 10101010 80808080 80808080      |................................|
+  001D50 (+1088)   80801010 10101010 10101010 10101010 10101010 10101010 00000000 00000000      |................................|
+  001D70 (+1120)   00001010 10101010 00004B00 F000012F 100F0000 00000000 F0F0F01F 00000000      |............0...........000.....|
+  001D90 (+1152)   40202020 6B202020 6B202120 4B202000 40212020 4B202000 00000000 00000000      | ...,...,....... ...............|
+  001DB0 (+1184)   E7000261 0001E700 02610001 E7000400 40202020 206B2021 204B2020 00008000      |X../..X../..X... ....,..........|
+  001DD0 (+1216)   00000000 00000000 C6C9C200 0104D3D6 C1D5E2C9 40400084 80800400 00008000      |........FIB...LOANSI  .d........|
+  001DF0 (+1248)   00000050 00000050 00000000 00000000 00000000 00000000 82080000 00000000      |...&...&................b.......|
+  001E10 (+1280)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001E30 (+1312)   00000000 00000000 D3D6C1D5 60E2E4D4 D4C1D9E8 60C6C9D3 C560C940 40404040      |........LOAN-SUMMARY-FILE-I     |
+  001E50 (+1344)   40404040 40400000 C6C3C200 01030000 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF      |      ..FCB.....................|
+  001E70 (+1376)   FFFFFFFF FFFFFFFF FFFFFFFF 00000000 00000000 00000000 00000000 00000000      |................................|
+  001E90 (+1408)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001EB0 (+1440)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001ED0 (+1472)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001EF0 (+1504)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001F10 (+1536)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001F30 (+1568)   00000050 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |...&............................|
+  001F50 (+1600)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001F70 (+1632)   C6C9C200 0204D7D9 C9D5E3F0 F0F10084 80802410 00008400 00000085 00000085      |FIB...PRINT001.d......d....e...e|
+  001F90 (+1664)   00000000 00000000 00000000 00000000 42240000 00000000 00000000 00000000      |................................|
+  001FB0 (+1696)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  001FD0 (+1728)   00000000 00000000 D3D6C1D5 60C5E7C3 C5D7E3C9 D6D560D9 C5D7D6D9 E3404040      |........LOAN-EXCEPTION-REPORT   |
+  001FF0 (+1760)   40404040 40400000 C6C3C200 02030000 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF      |      ..FCB.....................|
+  002010 (+1792)   FFFFFFFF FFFFFFFF FFFFFFFF 00000000 00000000 00000000 00000000 00000000      |................................|
+  002030 (+1824)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002050 (+1856)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002070 (+1888)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002090 (+1920)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  0020B0 (+1952)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  0020D0 (+1984)   00000085 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |...e............................|
+  0020F0 (+2016)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002110 (+2048)   C6C9C200 0304D7D9 C9D5E3F0 F0F20084 80802410 00008400 00000085 00000085      |FIB...PRINT002.d......d....e...e|
+  002130 (+2080)   00000000 00000000 00000000 00000000 42240000 00000000 00000000 00000000      |................................|
+  002150 (+2112)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002170 (+2144)   00000000 00000000 D3D6C1D5 60E2E4C3 C3C5E2C6 E4D360D9 C5D7D6D9 E3404040      |........LOAN-SUCCESFUL-REPORT   |
+  002190 (+2176)   40404040 40400000 C6C3C200 03030000 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF      |      ..FCB.....................|
+  0021B0 (+2208)   FFFFFFFF FFFFFFFF FFFFFFFF 00000000 00000000 00000000 00000000 00000000      |................................|
+  0021D0 (+2240)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  0021F0 (+2272)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002210 (+2304)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002230 (+2336)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    28
+0 002250 (+2368)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  002270 (+2400)   00000085 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |...e............................|
+  002290 (+2432)   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000      |................................|
+  0022B0 (+2464)   F1F3F1F5 F6F5F1F0 00000000 00000000 E2E8E2D6 E4E34040 00000000 00000000      |13156510........SYSOUT  ........|
+  0022D0 (+2496)   00000000 0F0F0000 00000000 00000000 00001100 00001208 00000000 00000000      |................................|
+  0022F0 (+2528)   00000000 00000000 00000000 00000000 F1F0F0D5 40000000 F1F0F0E4 40000000      |................100N ...100U ...|
+  002310 (+2560)   F2F0F040 40000000 F3F0F040 40000000 F4F0F040 40000000 F5F0F040 40000000      |200  ...300  ...400  ...500  ...|
+  002330 (+2592)   F6F0F040 40000000 F7F0F040 40000000 F8F0F040 40000000 00000000 000F0000      |600  ...700  ...800  ...........|
+  002350 (+2624)   00000000 000C0000 C0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |........{00000000000000000000000|
+  002370 (+2656)   F0F0F0F0 F0F0F0F0 C0D0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000{}0000000000000000000000|
+  002390 (+2688)   F0F0F0F0 F0F0F0F0 F0D00000 00000000 00000F00 00000000 00000C0C 000F000C      |000000000}......................|
+  0023B0 (+2720)   10000F00 00000000 00000000 00000000 00000000 00000040 00000000 00000002      |....................... ........|
+  0023D0 (+2752)   0000000B 00000006 00800000 08000000 12A80000 00000001 A4000000 04420000      |.................y......u.......|
+  0023F0 (+2784)   00300000 00000004 89000001 88000002 00000009 00000008 0000000F 0000000A      |........i...h...................|
+  002410 (+2816)   80000000 00000025 40404040 40404040 40404040 40404040 40404040 40404040      |........                        |
+  002430 (+2848)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  002450 (+2880)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  002470 (+2912)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  002490 (+2944)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  0024B0 (+2976)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  0024D0 (+3008)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  0024F0 (+3040)   40404040 40404040 40404040 40404040 40404040 40404040 40404040 40404040      |                                |
+  002510 (+3072)   40404040 40404040 D7D9D6C7 F0F30000 00000000 00000000 F0F0F0F0 F0F0F0F0      |        PROG03..........00000000|
+  002530 (+3104)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  002550 (+3136)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  002570 (+3168)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  002590 (+3200)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  0025B0 (+3232)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  0025D0 (+3264)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  0025F0 (+3296)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0      |00000000000000000000000000000000|
+  002610 (+3328)   F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 F0F0F0F0 0000005E 00000000      |000000000000000000000000...;....|
+  002630 (+3360)   00000000 00000000 F1F3F1F5 F6F5F1F0 04000000 00000000 E2E8E2D6 E4E34040      |........13156510........SYSOUT  |
+  002650 (+3392)   00000003                                                                     |....                            |
+
+
+
+                     PPA1:  Entry Point Constants
+  002658  1CCEA506                                               =F'483304710'      Flags
+  00265C  00002818                                               =A(PPA2-PROG03)
+  002660  00002788                                               =A(PPA3-PROG03)
+  002664  00000000                                               =F'0'              No EPD
+  002668  FFFE0000                                               =F'-131072'        Register Save Mask
+  00266C  40000000                                               =F'1073741824'     Member Flags
+  002670  90                                                     =AL1(144)          Flags
+  002671  0004B0                                                 =AL3(1200)         Callee's DSA use/8
+  002674  0000                                                   =AL1(0)            Flags
+  002676  0012                                                   =H'18'             Offset/2 to CDL
+  002678  D0000310                                               =F'-805305584'     State variable location
+  00267C  00000000                                               =F'0'              CDL function length/2
+  002680  00000000                                               =F'0'              CDL function EP offset
+  002684  00000000                                               =F'0'              CDL prolog
+  002688  00000000                                               =F'0'              CDL epilog
+  00268C  00000000                                               =F'0'              CDL end
+  002690  0006  ****                                             AL2(6),C'PROG03'
+                     PPA1  End
+
+
+
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    29
+0
+                     PPA1:  Entry Point Constants
+  002698  1CCE2106                                               =F'483270918'      Flags
+  00269C  00001718                                               =A(PPA2-#SRVal000000001 )
+  0026A0  00001698                                               =A(PPA3-#SRVal000000001 )
+  0026A4  00000000                                               =F'0'              No EPD
+  0026A8  FFFE0000                                               =F'-131072'        Register Save Mask
+  0026AC  00000000                                               =F'0'              Member Flags
+  0026B0  90                                                     =AL1(144)          Flags
+  0026B1  000190                                                 =AL3(400)          Callee's DSA use/8
+  0026B4  0000                                                   =AL1(0)            Flags
+  0026B6  0012                                                   =H'18'             Offset/2 to CDL
+  0026B8  00000000                                               =F'0'              State variable location
+  0026BC  00000000                                               =F'0'              CDL function length/2
+  0026C0  00000000                                               =F'0'              CDL function EP offset
+  0026C4  00000000                                               =F'0'              CDL prolog
+  0026C8  00000000                                               =F'0'              CDL epilog
+  0026CC  00000000                                               =F'0'              CDL end
+  0026D0  0010  ****                                             AL2(16),C'#SRVal000000001 '
+                     PPA1  End
+
+
+
+
+                     PPA1:  Entry Point Constants
+  0026E8  1CCE2106                                               =F'483270918'      Flags
+  0026EC  00001610                                               =A(PPA2-#WSVal000000001 )
+  0026F0  000015A0                                               =A(PPA3-#WSVal000000001 )
+  0026F4  00000000                                               =F'0'              No EPD
+  0026F8  FFFE0000                                               =F'-131072'        Register Save Mask
+  0026FC  00000000                                               =F'0'              Member Flags
+  002700  90                                                     =AL1(144)          Flags
+  002701  000190                                                 =AL3(400)          Callee's DSA use/8
+  002704  0000                                                   =AL1(0)            Flags
+  002706  0012                                                   =H'18'             Offset/2 to CDL
+  002708  00000000                                               =F'0'              State variable location
+  00270C  00000000                                               =F'0'              CDL function length/2
+  002710  00000000                                               =F'0'              CDL function EP offset
+  002714  00000000                                               =F'0'              CDL prolog
+  002718  00000000                                               =F'0'              CDL epilog
+  00271C  00000000                                               =F'0'              CDL end
+  002720  0010  ****                                             AL2(16),C'#WSVal000000001 '
+                     PPA1  End
+
+
+
+
+                     PPA1:  Entry Point Constants
+  002738  1CCE2106                                               =F'483270918'      Flags
+  00273C  00001308                                               =A(PPA2-__COMPUNITsinit)
+  002740  000012A8                                               =A(PPA3-__COMPUNITsinit)
+  002744  00000000                                               =F'0'              No EPD
+  002748  FFE00000                                               =F'-2097152'       Register Save Mask
+  00274C  00000000                                               =F'0'              Member Flags
+  002750  90                                                     =AL1(144)          Flags
+  002751  000190                                                 =AL3(400)          Callee's DSA use/8
+  002754  0000                                                   =AL1(0)            Flags
+  002756  0012                                                   =H'18'             Offset/2 to CDL
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    30
+0 002758  00000000                                               =F'0'              State variable location
+  00275C  00000000                                               =F'0'              CDL function length/2
+  002760  00000000                                               =F'0'              CDL function EP offset
+  002764  00000000                                               =F'0'              CDL prolog
+  002768  00000000                                               =F'0'              CDL epilog
+  00276C  00000000                                               =F'0'              CDL end
+  002770  000F  ****                                             AL2(15),C'__COMPUNITsinit'
+                     PPA1  End
+
+                     Timestamp and Version Information
+  0027C8  F2F0  F1F7                                             =C'2017'           Compiled Year
+  0027CC  F1F0  F3F1                                             =C'1031'           Compiled Date MMDD
+  0027D0  F1F3  F0F9  F1F8                                       =C'130918'         Compiled Time HHMMSS
+  0027D6  F0F5  F0F1  F0F0                                       =C'050100'         VERSION/RELEASE/MOD LEVEL OF PROD
+                     Timestamp and Version Information End
+
+
+                     Compiler Options and Program Information Section
+  0027DC         0034                                            =X'0034'           Size of Compiler Options and Prog Info Section
+  0027DE  (+00)  0474                                            =X'0474'           UNSIGNED BINARY CODE PAGE CCSID VALUE
+  0027E0  (+02)  06                                              =X'06'             ARCHITECTURE LEVEL
+  0027E1  (+03)  00                                              =X'00'             OPTIMIZATION LEVEL
+  0027E2  (+04)  1406                                            =X'1406'           INFO. BYTES 28-29
+  0027E4  (+06)  0000                                            =X'0000'           RESERVED
+  0027E6  (+08)  A02C744C2080                                    =X'A02C744C2080'   INFO. BYTES 1-6
+  0027EC  (+14)  00004280012B                                    =X'00004280012B'   INFO. BYTES 7-12
+  0027F2  (+20)  802040D00400                                    =X'802040D00400'   INFO. BYTES 13-18
+  0027F8  (+26)  0000000200                                      =X'0000000200'     INFO. BYTES 19-23
+  0027FD  (+31)  00                                              =X'00'             COBOL SIGNATURE LEVEL
+  0027FE  (+32)  0000005A                                        =X'0000005A'       # DATA DIVISION STATEMENTS
+  002802  (+36)  00000061                                        =X'00000061'       # PROCEDURE DIVISION STATEMENTS
+  002806  (+40)  00048000                                        =X'00048000'       INFO. BYTES 24-27
+  00280A  (+44)  4040404040404040                                =C'        '       USER LEVEL INFO (LVLINFO)
+                     Compiler Options and Program Information Section End
+
+
+
+                     PPA2:  Entry Point Constants
+  002818  04002203                                               =F'67117571'       Flags
+  00281C  FFFFD7E8                                               =A(CEESTART-PPA2)
+  002820  00000058                                               =F'88'             A(PPA4-PPA2)
+  002824  FFFFFFB0                                               =A(TIMESTMP-PPA2)
+  002828  FFFFD7E8                                               =A(PrimaryEntryPoint-PPA2)
+  00282C  02200000                                               =F'35651584'       Flags
+                     PPA2  End
+
+
+                     PPA3:  Entry Point Constants
+  002788  00000000                                               =F'0'              Flags
+  00278C  000000C0                                               =F'192'            A(Base_Locator_Table-PPA3)
+  002790  000000D8                                               =F'216'            A(Special_Register_Table-PPA3)
+  002790  0000018A                                               =X'18A'            A(User_Entry-CUEntry)
+                     PPA3  End
+
+
+                     PPA3:  Entry Point Constants
+  002798  00000000                                               =F'0'              Flags
+  00279C  00000000                                               =F'0'              A(Base_Locator_Table-PPA3)
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    31
+0 0027A0  00000000                                               =F'0'              A(Special_Register_Table-PPA3)
+  0027A0  00000000                                               =X'0'              A(User_Entry-CUEntry)
+                     PPA3  End
+
+
+                     PPA3:  Entry Point Constants
+  0027A8  00000000                                               =F'0'              Flags
+  0027AC  00000000                                               =F'0'              A(Base_Locator_Table-PPA3)
+  0027B0  00000000                                               =F'0'              A(Special_Register_Table-PPA3)
+  0027B0  00000000                                               =X'0'              A(User_Entry-CUEntry)
+                     PPA3  End
+
+
+                     PPA3:  Entry Point Constants
+  0027B8  00000000                                               =F'0'              Flags
+  0027BC  00000000                                               =F'0'              A(Base_Locator_Table-PPA3)
+  0027C0  00000000                                               =F'0'              A(Special_Register_Table-PPA3)
+  0027C0  00000000                                               =X'0'              A(User_Entry-CUEntry)
+                     PPA3  End
+
+
+                     Base Locator Table
+  002848  01                                                     =X'1'              Table Version
+  002849  00                                                     =X'0'              Reserved
+  00284A  0008                                                   =H'8'              Header length
+  00284C  00000010                                               =F'16'             Array byte length
+  002850  0A00                                                   =X'A00'            Flags & info (element  1)
+  002852  00000000                                               =X'0'              Offset to cells
+  002856  03                                                     =X'3'              Cell count
+  002857  2A00                                                   =X'2A00'           Flags & info (element  2)
+  002859  0000000C                                               =X'C'              Offset to cells
+  00285D  03                                                     =X'3'              Cell count
+  00285E  0000                                                   =X'0'              Flags & info (end of array)
+                     Base Locator Table End
+
+
+                     Special Register Table
+  002860  01                                                     =X'1'              Table Version
+  002861  00                                                     =X'0'              Reserved
+  002862  0008                                                   =H'8'              Header length
+  002864  00000006                                               =F'6'              Array byte length
+  002868  12                                                     =X'12'             Flags & info (element  1)
+  002869  00000020                                               =X'20'             Offset to cells
+  00286D  00                                                     =X'0'              Flags & info (end of array)
+                     Special Register Table End
+
+
+                     PPA4:  Entry Point Constants
+  002870  08000000                                               =F'134217728'      Flags 1
+  002874  00020100                                               =F'131328'         Flags 2
+  002878  00000000                                               =F'0'              A(NORENTstatic)
+  00287C  00000000                                               =F'0'              Q(RENTstatic)
+  002880  00000000                                               =F'0'              A(DATA24_address_cell-RENTstatic)
+  002884  FFFFD790                                               =F'-10352'         A(Code-PPA4)
+  002888  000028A8                                               =F'10408'          Code Length
+  00288C  00000000                                               =F'0'              Length NORENTstatic
+  002890  00000D38                                               =F'3384'           Length RENTstatic
+  002894  00000000                                               =F'0'              Length DATA24
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    32
+0 002898  002A                                                   =X'2A'             A(CUName-PPA4)
+                     PPA4  End
+
+
+
+
+
+                     E X T E R N A L    S Y M B O L    D I C T I O N A R Y
+
+                      TYPE   ID   ADDR   LENGTH        NAME
+
+                       SD     1  000000  000000        PROG03
+                       ED     2  000000  000000        C_CEESG003
+                       ED     3  000000  0028A8        C_CODE
+                       LD     4  000000  000000        PROG03#C
+                       ER     5  000000  000000        CEESTART
+                       ER     6  000000  000000        CEEBETBL
+                       ED     7  000000  000000        C_WSA
+                       PR     8  000000  000D38        PROG03#S
+                       ED     9  000000  000022        B_IDRL
+                       ER    10  000000  000000        IGZXBST
+                       ER    11  000000  000000        PROG03
+                       ER    12  000000  000000        IGZXPRS
+                       ER    13  000000  000000        IGZXCMSG
+                       ER    14  000000  000000        IGZXQOPN
+                       ER    15  000000  000000        IGZXCDT
+                       ER    16  000000  000000        IGZXSPA
+                       ER    17  000000  000000        IGZXANE2
+                       ER    18  000000  000000        IGZXQCLS
+                       ER    19  000000  000000        IGZXTREC
+                       ER    20  000000  000000        IGZXINSP
+                       ER    21  000000  000000        IGZXPR2
+                       ER    22  000000  000000        IGZXXMU0
+                       ER    23  000000  000000        IGZXXDI0
+                       ER    24  000000  000000        IGZXMSG
+                       LD    25  000000  000000        PROG03
+                       ER    26  000000  000000        CEESG004
+                       ED    27  000000  000000        C_@@PPA2
+                       PR    28  000000  000008
+                       ED    29  000000  000000        C_@@CSINIT
+                       PR    30  000000  000004
+
+
+                     * * * * *   S T A T I C     M A P   * * * * *
+
+  OFFSET (HEX)   LENGTH (HEX)   NAME
+
+            0              C       BLF_Ptrs
+            C              C       BLT_Ptrs
+           18              4       JNIENVPTR
+           20              2       RETURN-CODE
+           28              2       SORT-RETURN
+           30              8       SORT-CONTROL
+           38              4       SORT-CORE-SIZE
+           40              4       SORT-FILE-SIZE
+           48              4       SORT-MODE-SIZE
+           50              8       SORT-MESSAGE
+           58              4       TALLY
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    33
+0          60              1       SHIFT-OUT
+           68              1       SHIFT-IN
+           70              4       XML-CODE
+           78             1E       XML-EVENT
+           98              4       XML-INFORMATION
+           A0             85       LOAN-EXCEPTION-REPORT
+          128             85       LOAN-SUCCESFUL-REPORT
+          1B0              1       PROGRAM-INDICATORS
+          1B8              E       WS-CURRENT-DATE-TIME
+          1C8             84       WS-SPACER
+          250              6       WS-EXCEPTION-VARS
+          258             89       WS-CMPT-VAL
+          2E8              D       WS-PGM-VARS
+          2F8             51       WS-HEADING-LINE-1
+          350             6E       WS-HEADING-LINE-2
+          3C0             84       WS-HEADING-LINE-3
+          448             56       WS-EXCEPTION-DTL-SUMMARY
+          4A0             3C       WS-EXCEPTION-DTL-LOAN
+          4E0             3C       WS-EXCEPTION-DTL-PRIN
+          520             3C       WS-EXCEPTION-DTL-YEAR
+          560             3C       WS-EXCEPTION-DTL-RATE
+          5A0             84       WS-SUCCESFUL-RPT-SUMMARY-L1
+          628             7A       WS-SUCCESFUL-RPT-DETAIL-L1
+          6A8             75       WS-SUCCESFUL-RPT-DETAIL-L2
+          720              C       _FCBAA
+          72C              C       _FIBAA
+          738             BC       LOAN-SUMMARY-FILE-I_IFIB
+          7F4            114       LOAN-SUMMARY-FILE-I_FCB
+          908             BC       LOAN-EXCEPTION-REPORT_IFIB
+          9C4            114       LOAN-EXCEPTION-REPORT_FCB
+          AD8             BC       LOAN-SUCCESFUL-REPORT_IFIB
+          B94            114       LOAN-SUCCESFUL-REPORT_FCB
+          CA8             2C       VNI_cells
+          CD4             60       GPCB
+          D34              4       WSA24-BASE-ADDRESS
+
+
+                     * * * * *   E N D     O F     S T A T I C     M A P   * * * * *
+
+                     * * * * *   A U T O M A T I C     M A P   * * * * *
+
+  OFFSET (HEX)   LENGTH (HEX)   NAME
+
+  Block name: PROG03
+
+           80              4       __CAA
+           C8             10       _BEtemp200
+           D8             20       _BEtemp216
+           F8             20       _BEtemp248
+          118             10       _BEtemp280
+          128             10       _BEtemp296
+          138             10       _BEtemp312
+          148             10       _BEtemp328
+          158             10       _BEtemp344
+          168             20       _BEtemp360
+          188             10       _BEtemp392
+          198             10       _BEtemp408
+          1A8             10       _BEtemp424
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    34
+0         1B8              4       _BEtemp440
+          1BC              4       _CACHED_$STATIC
+          1C0              4       TS2=106
+          1C4              4       TS2=105
+          1C8              2       _returnValue
+          1CC              4       PfmSv_Cell
+          1D0              4       PfmSv_Cell
+          1D4              4       PfmSv_Cell
+          1D8              4       PfmSv_Cell
+          1DC              4       PfmSv_Cell
+          1E0              4       PfmSv_Cell
+          1E4              1       TS2=21
+          1E8              4       TS2=20
+          1EC              5       TS2=24
+          1F4              4       PfmSv_Cell
+          1F8              4       PfmSv_Cell
+          1FC              3       TS2=36
+          200              4       PfmSv_Cell
+          204              4       PfmSv_Cell
+          208              6       TS2=40
+          210              4       PfmSv_Cell
+          214              6       TS2=77
+          220             30       _argumentList3
+          250             38       _RTMSG
+          288             30       _argumentList2
+          2B8             24       _argumentList
+          2E0             2C       VN_cells
+          310             30       COBDSACB
+          340             18       VLC_cells
+          358             15       FuncResultTemp
+          370              F       TS2=75
+          380              7       TS2=79
+          388              C       TS2=88
+          398             10       _VTS_4
+          3A8              5       _VTS_3
+          3B0             17       _VTS_2
+          3C8             23       _VTS_1
+
+
+  OFFSET (HEX)   LENGTH (HEX)   NAME
+
+  Block name: #SRVal000000001
+
+           80              4       __CAA
+           84              4       _parentDSA
+           C8              4       _CACHED_$STATIC
+
+
+  OFFSET (HEX)   LENGTH (HEX)   NAME
+
+  Block name: #WSVal000000001
+
+           80              4       __CAA
+           84              4       _parentDSA
+           C8              4       _CACHED_$STATIC
+
+
+  OFFSET (HEX)   LENGTH (HEX)   NAME
+1PP 5655-W32 IBM Enterprise COBOL for z/OS  5.1.0               PROG03    Date 10/31/2017  Time 13:09:18   Page    35
+0
+  Block name: __COMPUNITsinit
+
+            C              4       __CAACRENT
+           80              4       _incomingArgumentList
+           84              4       __CAA
+           C8              4       _CACHED_$STATIC
+
+
+                     * * * * *   E N D     O F     A U T O M A T I C     M A P   * * * * *
+
+
+
+            Testarossa level: tr.r13.cobol_20131008_47825
+
+
+
+            * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
+
+0Return code 4
+1z/OS V2 R1 BINDER     13:09:19 TUESDAY OCTOBER 31, 2017
+ BATCH EMULATOR  JOB(KC03G8DQ) STEP(STEP1   ) PGM= IEWBLINK  PROCEDURE(LKED    )
+
+
+
+                                 *** O P E R A T I O N   S U M M A R Y   R E P O R T ***
+
+1PROCESSING OPTIONS:
+
+    ALIASES             NO
+    ALIGN2              NO
+    AMODE               UNSPECIFIED
+    CALL                YES
+    CASE                UPPER
+    COMPAT              UNSPECIFIED
+    COMPRESS            AUTO
+    DCBS                NO
+    DYNAM               NO
+    EXTATTR             UNSPECIFIED
+    EXITS:              NONE
+    FILL                NONE
+    GID                 UNSPECIFIED
+    HOBSET              NO
+    INFO                NO
+    LET                 04
+    LINECT              060
+    LIST                SUMMARY
+    LISTPRIV            NO
+    LONGPARM            NO
+    MAP                 NO
+    MAXBLK              032760
+    MODMAP              NO
+    MSGLEVEL            00
+    OVLY                NO
+    PRINT               YES
+    RES                 NO
+    REUSABILITY         UNSPECIFIED
+    RMODE               UNSPECIFIED
+    SIGN                NO
+    STORENX             NOREPLACE
+    STRIPCL             NO
+    STRIPSEC            NO
+    SYMTRACE
+    TERM                NO
+    TRAP                ON
+    UID                 UNSPECIFIED
+    UPCASE              NO
+    WKSPACE             000000K,000000K
+    XCAL                NO
+    XREF                NO
+    ***END OF OPTIONS***
+
+
+
+
+1SAVE OPERATION SUMMARY:
+
+    MEMBER NAME         PROG03
+    LOAD LIBRARY        KC03G8D.LANG.LOAD
+    PROGRAM TYPE        PROGRAM OBJECT(FORMAT 3)
+    VOLUME SERIAL       KCTR32
+    DISPOSITION         REPLACED
+    TIME OF SAVE        13.09.19  OCT 31, 2017
+
+
+1SAVE MODULE ATTRIBUTES:
+
+    AC                  000
+    AMODE                31
+    COMPRESSION         NONE
+    DC                  NO
+    EDITABLE            YES
+    EXCEEDS 16MB        NO
+    EXECUTABLE          YES
+    LONGPARM            NO
+    MIGRATABLE          NO
+    OL                  NO
+    OVLY                NO
+    PACK,PRIME          NO,NO
+    PAGE ALIGN          NO
+    REFR                NO
+    RENT                NO
+    REUS                NO
+    RMODE               ANY
+    SCTR                NO
+    SIGN                NO
+    SSI
+    SYM GENERATED       NO
+    TEST                NO
+    XPLINK              NO
+    MODULE SIZE (HEX)   00004248
+    DASD SIZE (HEX)     0000E000
+
+1 ENTRY POINT AND ALIAS SUMMARY:
+
+  NAME:            ENTRY TYPE AMODE C_OFFSET CLASS NAME        STATUS
+
+  PROG03            MAIN_EP      31 00000000 C_CODE
+
+                          *** E N D   O F   O P E R A T I O N   S U M M A R Y   R E P O R T ***
+
+
+
+
+1z/OS V2 R1 BINDER     13:09:19 TUESDAY OCTOBER 31, 2017
+ BATCH EMULATOR  JOB(KC03G8DQ) STEP(STEP1   ) PGM= IEWBLINK  PROCEDURE(LKED    )
+ IEW2008I 0F03 PROCESSING COMPLETED.  RETURN CODE =  0.
+
+
+
+1----------------------
+ MESSAGE SUMMARY REPORT
+ ----------------------
+  TERMINAL MESSAGES      (SEVERITY = 16)
+  NONE
+
+  SEVERE MESSAGES        (SEVERITY = 12)
+  NONE
+
+  ERROR MESSAGES         (SEVERITY = 08)
+  NONE
+
+  WARNING MESSAGES       (SEVERITY = 04)
+  NONE
+
+  INFORMATIONAL MESSAGES (SEVERITY = 00)
+  2008
+
+
+  **** END OF MESSAGE SUMMARY REPORT ****
+
+
