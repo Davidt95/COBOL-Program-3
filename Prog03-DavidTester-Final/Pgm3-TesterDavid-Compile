@@ -22,8 +22,8 @@
    000006               **  AUTHOR:  DAVID TESTER                                     **
    000007               **   INPUT:  1. CONTROL CARD                                  **
    000008               **           2. CUSTOMER MASTER FILE                          **
-   000009               **  OUTPUT:  1. SALES REPORT                                  **
-   000010               **                                                            **
+   000009               **  OUTPUT:  1. LOAN SCHEDULE REPORT                          **
+   000010               **           2. EXCEPTION REPORT                              **
    000011               ****************************************************************
    000012               **  MODIFICATION LOG:                                         **
    000013               **  00.  10/24/2017  ORIGINAL VERSION                         **
